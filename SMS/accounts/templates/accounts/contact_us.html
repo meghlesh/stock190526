@@ -1,0 +1,628 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Contact Sales | CWS Inventory Enterprise</title>
+    <link rel="icon" type="image/png" href="{% static 'accounts/images/Tab Logo.png' %}">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#5046e5', // Primary purple/blue
+                            primary_hover: '#4338ca',
+                            primary_light: '#e0e7ff',
+                            secondary: '#343090', 
+                            dark_bg: '#0E0A4E', // Matched to landing page deep blue
+                            card_bg: '#1b1b4b',
+                            text_dark: '#0f172a',
+                            text_body: '#414751',
+                            bg_light: '#F0F3FF', // Matched light blue section bg
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'floating': '0 20px 50px -10px rgba(80, 70, 229, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for dropdown */
+        .dropdown-menu::-webkit-scrollbar { width: 6px; }
+        .dropdown-menu::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 8px; }
+        .dropdown-menu::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+        .dropdown-menu::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .bg-pattern {
+            background-image: radial-gradient(#5046e5 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-brand-bg_light text-brand-text_body min-h-screen flex flex-col selection:bg-brand-primary selection:text-white">
+
+    <!-- Minimal Header -->
+    <header class="bg-white sticky top-0 z-50 w-full shadow-sm">
+        <div class="max-w-[1440px] mx-auto py-4 lg:py-5 px-4 sm:px-6 lg:px-[78px]">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="{% url 'index' %}" class="flex-shrink-0 flex items-center group">
+                    <img src="{% static 'accounts/images/logo.png' %}" alt="CWS Inventory Logo" class="h-[56px] sm:h-[72px] lg:h-[90px] w-auto object-contain -my-3 sm:-my-5 lg:-my-[20px] group-hover:scale-105 transition-transform duration-300">
+                </a>
+                
+                <!-- Back Button -->
+                <a href="{% url 'index' %}" class="text-[#414751] hover:text-[#5046E5] text-[14px] font-medium transition flex items-center gap-2 bg-[#F0F3FF] hover:bg-[#E0E7FF] px-4 py-2 rounded-lg">
+                    <i class="fa-solid fa-house text-[12px]"></i>
+                    <span class="hidden sm:inline">Back to Home</span>
+                    <span class="sm:hidden">Back</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow relative overflow-hidden flex items-center py-10 lg:py-16">
+        <!-- Background Decorative Elements -->
+        <div class="absolute inset-0 bg-pattern pointer-events-none"></div>
+        <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-brand-primary/5 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-[#0E0A4E]/5 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-[1280px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white rounded-[24px] shadow-floating overflow-hidden flex flex-col lg:flex-row border border-gray-100">
+                
+                <!-- Left Side: Information -->
+                <div class="w-full lg:w-[45%] bg-[#0E0A4E] text-white p-8 lg:p-14 flex flex-col justify-between relative overflow-hidden">
+                    <!-- Decor inside blue box -->
+                    <svg class="absolute top-0 right-0 transform translate-x-1/3 -translate-y-1/3 opacity-10" width="400" height="400" viewBox="0 0 400 400" fill="none">
+                        <circle cx="200" cy="200" r="150" stroke="white" stroke-width="40"/>
+                        <circle cx="200" cy="200" r="80" stroke="white" stroke-width="20"/>
+                    </svg>
+
+                    <div class="relative z-10">
+                        <span class="bg-[#2A2674] text-[#A5B4FC] text-[11px] font-bold uppercase inline-flex items-center justify-center mb-6 px-4 py-1.5 rounded-full tracking-wider">
+                            Enterprise Solution
+                        </span>
+                        <h2 class="text-[32px] lg:text-[40px] font-bold leading-[1.2] mb-4">
+                            Let's scale your inventory operations.
+                        </h2>
+                        <div class="w-[40px] h-[4px] bg-[#5046E5] rounded-full mb-6"></div>
+                        <p class="text-[#cbd5e1] text-[16px] lg:text-[18px] leading-relaxed mb-10">
+                            Tell us about your business requirements. Our enterprise experts will reach out within 24 hours to schedule a personalized demo.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope text-[#A5B4FC]"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[13px] text-gray-400 font-medium mb-1">Email Us</p>
+                                    <a href="mailto:info@cwsinventory.in" class="text-[16px] font-medium hover:text-[#A5B4FC] transition-colors">info@cwsinventory.in</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone text-[#A5B4FC]"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[13px] text-gray-400 font-medium mb-1">Call Us</p>
+                                    <a href="tel:+919326246981" class="text-[16px] font-medium hover:text-[#A5B4FC] transition-colors">+91 93262 46981</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-location-dot text-[#A5B4FC]"></i>
+                                </div>
+                               <div>
+    <p class="text-[13px] text-gray-400 font-medium mb-1">Headquarters</p>
+
+    <a 
+        href="https://www.google.com/maps/search/?api=1&query=LWT+203+C/O+ITI+RD+above+PNG+near+Parihar+Chowk+Aundh+Maharashtra+411007"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[15px] text-gray-200 leading-relaxed hover:text-blue-400 transition duration-200"
+    >
+        LWT, 203, C/O, ITI RD, above PNG,<br>
+        near Parihar Chowk, Aundh,<br>
+        Maharashtra 411007
+    </a>
+</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom trusted text -->
+                    <div class="relative z-10 mt-12 pt-8 border-t border-white/10">
+                        <p class="text-sm text-gray-400 italic">"Transform the way you manage inventory with real-time insights and automated workflows."</p>
+                    </div>
+                </div>
+
+                <!-- Right Side: Form -->
+                <div class="w-full lg:w-[55%] p-8 lg:p-14 bg-white relative">
+                    <div class="mb-8">
+                        <h3 class="text-[24px] lg:text-[28px] font-bold text-[#0E0A4E] mb-2">Contact Sales</h3>
+                        <p class="text-[#414751] text-[15px]">Fill out the details below and we'll connect you with the right team.</p>
+                    </div>
+                    <div id="duplicateError"
+class="hidden fixed top-[120px] left-1/2 -translate-x-1/2 z-[9999] w-full max-w-[620px] bg-red-50 border border-red-200 text-red-700 px-6 py-5 rounded-2xl shadow-lg">
+    <div class="flex items-start justify-between gap-3">
+
+        <div class="flex items-start gap-3">
+
+            <i class="fa-solid fa-circle-exclamation text-red-600 mt-1 text-[20px]"></i>
+
+            <div>
+
+                <p id="errorTitle"
+                   class="font-bold text-[18px] text-red-700">
+                    Email already exists.
+                </p>
+
+                <p id="errorMessage"
+                   class="text-[15px] text-red-500 mt-1">
+                    Please use a different email address.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button type="button"
+                onclick="document.getElementById('duplicateError').classList.add('hidden')"
+                class="text-red-400 hover:text-red-600 text-[20px] font-bold">
+            ×
+        </button>
+
+    </div>
+</div>
+
+                    <form method="POST" action="{% url 'contact_us' %}" id="contactForm">
+                        {% csrf_token %}
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                            <!-- Full Name -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Full Name <span class="text-red-500">*</span></label>
+                                <input type="text" name="name" required placeholder="John Doe" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400">
+                            </div>
+                            <!-- Work Email -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Work Email <span class="text-red-500">*</span></label>
+                                <input type="email" name="email" required placeholder="john@company.com" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400">
+                            </div>
+                            <!-- Phone -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Phone Number <span class="text-red-500">*</span></label>
+                               <input type="tel" name="phone" required inputmode="numeric" pattern="[0-9]*" placeholder="+91 90000 00000" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400">
+                            </div>
+                            <!-- Company -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Company Name <span class="text-red-500">*</span></label>
+                                <input type="text" name="company_name" required placeholder="Your Company Ltd" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400">
+                            </div>
+                            <!-- Industry -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Industry</label>
+                                <input type="text" name="industry" placeholder="e.g. Retail, Pharmacy" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400">
+                            </div>
+                            
+                            <!-- Custom JS Dropdown for Number of Users -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Number of Users</label>
+                                <div class="relative custom-dropdown">
+                                    <button type="button" class="dropdown-button w-full flex items-center justify-between px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all text-left">
+                                        <span class="dropdown-display text-gray-400 truncate block">Select Number (Optional)</span>
+                                        <i class="fa-solid fa-chevron-down text-[12px] text-gray-400 transition-transform duration-200"></i>
+                                    </button>
+                                    <!-- Dropdown Menu -->
+                                    <div class="dropdown-menu absolute z-50 w-full mt-2 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible transition-all duration-200 transform origin-top scale-95 max-h-[200px] overflow-y-auto">
+                                        <ul class="py-2">
+                                            <li class="dropdown-item px-4 py-2.5 hover:bg-[#F0F3FF] hover:text-[#5046E5] cursor-pointer text-[15px] font-medium transition-colors text-gray-400 italic" data-value="">Skip / Not sure</li>
+                                            <li class="dropdown-item px-4 py-2.5 hover:bg-[#F0F3FF] hover:text-[#5046E5] cursor-pointer text-[15px] font-medium transition-colors" data-value="10-50">10-50 Users</li>
+                                            <li class="dropdown-item px-4 py-2.5 hover:bg-[#F0F3FF] hover:text-[#5046E5] cursor-pointer text-[15px] font-medium transition-colors" data-value="51-200">51-200 Users</li>
+                                            <li class="dropdown-item px-4 py-2.5 hover:bg-[#F0F3FF] hover:text-[#5046E5] cursor-pointer text-[15px] font-medium transition-colors" data-value="201-500">201-500 Users</li>
+                                            <li class="dropdown-item px-4 py-2.5 hover:bg-[#F0F3FF] hover:text-[#5046E5] cursor-pointer text-[15px] font-medium transition-colors" data-value="500+">500+ Users</li>
+                                        </ul>
+                                    </div>
+                                    <input type="hidden" name="number_of_users" value="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Requirements -->
+                        <div class="mb-8">
+                            <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Requirements / Message</label>
+                            <textarea name="message" rows="4" placeholder="Tell us about your inventory challenges and specific needs..." class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400 resize-none"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submitBtn" disabled class="w-full bg-[#5046E5] hover:bg-[#4338ca] text-white font-semibold py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg opacity-50 cursor-not-allowed flex items-center justify-center gap-2 text-[16px]">
+                            <span>Submit Inquiry</span>
+                            <i class="fa-solid fa-arrow-right text-[14px]"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-[#0E0A4E]/60 backdrop-blur-md transition-opacity" onclick="closeModal()"></div>
+        <!-- Modal Content -->
+        <div class="bg-white rounded-3xl shadow-[0_20px_50px_-10px_rgba(80,70,229,0.3)] p-10 max-w-md w-full mx-4 relative z-10 transform transition-all text-center overflow-hidden">
+            <!-- Decorative Background blob -->
+            <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-br from-green-50 to-emerald-100/50 -z-10 rounded-t-3xl"></div>
+            
+            <!-- Animated Icon -->
+            <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/30 relative">
+                <div class="absolute inset-0 rounded-full border-4 border-white opacity-20"></div>
+                <i class="fa-solid fa-check text-3xl text-white"></i>
+            </div>
+            
+            <h3 class="text-[28px] font-extrabold text-[#0E0A4E] mb-3 tracking-tight">Message Received!</h3>
+            <p class="text-[#414751] mb-8 text-[16px] leading-relaxed">
+                Thank you for reaching out. Our enterprise experts are reviewing your details and will contact you within <span class="font-bold text-[#5046E5]">24 hours</span>.
+            </p>
+            
+            <button onclick="closeModal()" class="w-full bg-gradient-to-r from-[#5046E5] to-[#4338ca] hover:from-[#4338ca] hover:to-[#3730a3] text-white font-semibold py-4 rounded-xl transition-all shadow-[0px_4px_25px_rgba(80,70,229,0.31)] hover:shadow-[0px_6px_35px_rgba(80,70,229,0.4)] transform hover:-translate-y-0.5 text-[16px]">
+                Got it, thanks!
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts for Custom Dropdowns & Form Validation -->
+   <script>
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- CUSTOM DROPDOWN LOGIC ---
+            function initCustomDropdowns() {
+                const dropdowns = document.querySelectorAll('.custom-dropdown');
+                
+                // Close all dropdowns if clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.custom-dropdown')) {
+                        closeAllDropdowns();
+                    }
+                });
+
+                function closeAllDropdowns() {
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        menu.classList.remove('opacity-100', 'visible', 'scale-100');
+                        menu.classList.add('opacity-0', 'invisible', 'scale-95');
+                    });
+                    document.querySelectorAll('.dropdown-button i').forEach(icon => {
+                        icon.style.transform = 'rotate(0deg)';
+                    });
+                }
+
+                dropdowns.forEach(dropdown => {
+                    const button = dropdown.querySelector('.dropdown-button');
+                    const display = dropdown.querySelector('.dropdown-display');
+                    const menu = dropdown.querySelector('.dropdown-menu');
+                    const items = dropdown.querySelectorAll('.dropdown-item');
+                    const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+                    const icon = button.querySelector('i');
+
+                    // Toggle menu on button click
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const isOpen = menu.classList.contains('visible');
+                        
+                        closeAllDropdowns(); // Close others
+
+                        if (!isOpen) {
+                            menu.classList.remove('opacity-0', 'invisible', 'scale-95');
+                            menu.classList.add('opacity-100', 'visible', 'scale-100');
+                            icon.style.transform = 'rotate(180deg)';
+                        }
+                    });
+
+                    // Select option
+                    items.forEach(item => {
+                        item.addEventListener('click', () => {
+                            const value = item.getAttribute('data-value');
+                            const text = item.textContent;
+
+                            // Update Display
+                            display.textContent = text;
+                            display.classList.remove('text-gray-400');
+                            display.classList.add('text-gray-900', 'font-medium');
+                            
+                            // Update Hidden Input
+                            hiddenInput.value = value;
+                            
+                            // Trigger validation programmatically
+                            hiddenInput.dispatchEvent(new Event('input'));
+
+                            closeAllDropdowns();
+                        });
+                    });
+                });
+            }
+
+            initCustomDropdowns();
+
+            // --- FORM VALIDATION LOGIC ---
+            const validators = {
+                full_name: { test: (val) => /^[A-Za-z][A-Za-z\s]*$/.test(val), message: 'Name must start with a letter and contain only alphabets/spaces.', maxLength: 30 },
+                name: { test: (val) => /^[A-Za-z][A-Za-z\s]*$/.test(val), message: 'Name must start with a letter and contain only alphabets/spaces.', maxLength: 30 },
+                email: { test: (val) => /^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(val), message: 'Please enter a valid email address.' },
+                phone: { test: (val) => /^\d{10}$/.test(val), message: 'Phone number must be exactly 10 digits.', maxLength: 10 },
+                company_name: { test: (val) => /^[A-Za-z\s]+$/.test(val), message: 'Only alphabets and spaces are allowed. No numeric value or special character accepted.', maxLength: 50 },
+                industry: { test: (val) => val === '' || /^[A-Za-z\s]+$/.test(val), message: 'Only alphabets are allowed. No numeric value or special character accepted.', maxLength: 30 },
+                number_of_users: { test: (val) => true, message: '' },
+                message: { test: (val) => val === '' || /^[^\s]/.test(val), message: 'Cannot start with a space.', maxLength: 500 }
+            };
+
+            function validateInput(input) {
+                const name = input.name;
+                if (!validators[name]) return true;
+
+                const val = input.value;
+                const validator = validators[name];
+
+                // If empty and not required by HTML, skip validation unless it's our hidden dropdown
+                let isValid = (val === '' && input.type !== 'hidden' && !input.required) ? true : validator.test(val);
+                
+                let errorSpan = input.nextElementSibling;
+                if (!errorSpan || !errorSpan.classList.contains('validation-error')) {
+                    errorSpan = document.createElement('span');
+                    errorSpan.classList.add('validation-error', 'text-red-500', 'text-[12px]', 'mt-1', 'block', 'font-medium');
+                    input.parentNode.insertBefore(errorSpan, input.nextSibling);
+                }
+
+                if (!isValid) {
+                    errorSpan.textContent = validator.message;
+                    
+                    // Handle visual error for custom dropdowns vs normal inputs
+                    if (input.type === 'hidden') {
+                        const btn = input.closest('.custom-dropdown').querySelector('.dropdown-button');
+                        btn.classList.add('border-red-500', 'focus:ring-red-500/20');
+                        btn.classList.remove('border-gray-200', 'focus:ring-brand-primary/20');
+                    } else {
+                        input.classList.add('border-red-500', 'focus:ring-red-500/20', 'focus:border-red-500');
+                        input.classList.remove('border-gray-200', 'focus:ring-brand-primary/20', 'focus:border-brand-primary');
+                    }
+                    return false;
+                } else {
+                    errorSpan.textContent = '';
+                    
+                    // Handle visual success for custom dropdowns vs normal inputs
+                    if (input.type === 'hidden') {
+                        const btn = input.closest('.custom-dropdown').querySelector('.dropdown-button');
+                        btn.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                        btn.classList.add('border-gray-200', 'focus:ring-brand-primary/20');
+                    } else {
+                        input.classList.remove('border-red-500', 'focus:ring-red-500/20', 'focus:border-red-500');
+                        input.classList.add('border-gray-200', 'focus:ring-brand-primary/20', 'focus:border-brand-primary');
+                    }
+                    return true;
+                }
+            }
+
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                const inputs = form.querySelectorAll('input, textarea');
+                const submitBtn = form.querySelector('button[type="submit"]');
+
+                function checkFormValidity() {
+                    let formIsValid = true;
+                    inputs.forEach(input => {
+                        if (input.required && input.value.trim() === '') {
+                            formIsValid = false;
+                        } else if (input.value !== '') {
+                            const name = input.name;
+                            if (validators[name] && !validators[name].test(input.value)) {
+                                formIsValid = false;
+                            }
+                        }
+                    });
+                    
+                    if (formIsValid) {
+                        submitBtn.removeAttribute('disabled');
+                        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    } else {
+                        submitBtn.setAttribute('disabled', 'disabled');
+                        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    }
+                }
+                
+                inputs.forEach(input => {
+                    if (validators[input.name] && validators[input.name].maxLength) {
+                        input.setAttribute('maxlength', validators[input.name].maxLength);
+                    }
+                   input.addEventListener('keydown', function(e) {
+    if (e.key === ' ' && this.selectionStart === 0) {
+        e.preventDefault();
+    }
+    // Block alphabets and special characters for phone field
+    if (this.name === 'phone') {
+        const allowedKeys = ['Backspace','Delete','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Tab','Home','End'];
+        if (!allowedKeys.includes(e.key) && !/^\d$/.test(e.key)) {
+            e.preventDefault();
+        }
+    }
+});
+                   input.addEventListener('input', function() {
+    if (this.value.startsWith(' ')) {
+        this.value = this.value.trimStart();
+    }
+    // Strip non-numeric characters for phone field (handles paste)
+    if (this.name === 'phone') {
+        this.value = this.value.replace(/\D/g, '');
+    }
+    validateInput(this);
+    checkFormValidity();
+});
+                    if(input.type !== 'hidden'){
+                        input.addEventListener('blur', function() {
+                            validateInput(this);
+                            checkFormValidity();
+                        });
+                    }
+                });
+
+                form.addEventListener('submit', function(e) {
+                    let formIsValid = true;
+                    inputs.forEach(input => {
+                        // Check validation
+                        if (input.required && input.value === '') {
+                            formIsValid = false;
+                            validateInput(input);
+                        } else if (input.value !== '' && !validateInput(input)) {
+                            formIsValid = false;
+                        }
+                    });
+                    
+                    if (!formIsValid) {
+                        e.preventDefault(); // Stop submission if invalid
+                    } else {
+                        e.preventDefault(); // Prevent standard redirect
+                        submitBtn.setAttribute('disabled', 'disabled');
+                        submitBtn.innerHTML = '<span>Submitting...</span> <i class="fa-solid fa-spinner fa-spin text-[14px]"></i>';
+                        
+                        const formData = new FormData(form);
+                        fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest' // Helps Django identify AJAX
+                            }
+                        })
+                       .then(response => {
+
+    if (response.ok) {
+
+        document.getElementById('successModal').classList.remove('hidden');
+
+        form.reset();
+
+        // Reset custom dropdown visual state
+        const dropdownDisplay = form.querySelector('.dropdown-display');
+
+        if (dropdownDisplay) {
+
+            dropdownDisplay.textContent =
+                'Select Number (Optional)';
+
+            dropdownDisplay.classList.add('text-gray-400');
+
+            dropdownDisplay.classList.remove(
+                'text-gray-900',
+                'font-medium'
+            );
+        }
+
+        // Reset inputs visually
+        inputs.forEach(inp => {
+
+            inp.classList.remove(
+                'border-gray-200',
+                'focus:ring-brand-primary/20',
+                'focus:border-brand-primary'
+            );
+
+            inp.classList.remove(
+                'border-red-500',
+                'focus:ring-red-500/20',
+                'focus:border-red-500'
+            );
+
+            inp.classList.add('border-gray-200');
+
+            let errSpan = inp.nextElementSibling;
+
+            if (
+                errSpan &&
+                errSpan.classList.contains('validation-error')
+            ) {
+                errSpan.textContent = '';
+            }
+        });
+
+        checkFormValidity();
+
+    } else {
+
+        response.json().then(data => {
+
+            const errorBox =
+                document.getElementById('duplicateError');
+
+            const errorTitle =
+                document.getElementById('errorTitle');
+
+            const errorMessage =
+                document.getElementById('errorMessage');
+
+            errorBox.classList.remove('hidden');
+            setTimeout(() => {
+
+    errorBox.classList.add('hidden');
+
+}, 5000);
+
+            if (data.field === "email") {
+
+                errorTitle.textContent =
+                    "Email already exists.";
+
+                errorMessage.textContent =
+                    "Please use a different email address.";
+
+            }
+
+            else if (data.field === "phone") {
+
+                errorTitle.textContent =
+                    "Phone number already exists.";
+
+                errorMessage.textContent =
+                    "Please use a different phone number.";
+            }
+        });
+    }
+})
+                        .catch(error => {
+                            alert("Network error. Please check your connection.");
+                        })
+                        .finally(() => {
+                            submitBtn.removeAttribute('disabled');
+                            submitBtn.innerHTML = '<span>Submit Inquiry</span> <i class="fa-solid fa-arrow-right text-[14px]"></i>';
+                            checkFormValidity();
+                        });
+                    }
+                });
+                
+                checkFormValidity();
+            });
+        });
+    </script>
+</body>
+</html>

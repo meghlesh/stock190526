@@ -1,0 +1,446 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | CWS Inventory</title>
+    <link rel="icon" type="image/png" href="{% static 'accounts/images/Tab Logo.png' %}">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#5046e5',
+                            primary_hover: '#4338ca',
+                            primary_light: '#e0e7ff',
+                            secondary: '#343090',
+                            dark_bg: '#0a0a32',
+                            card_bg: '#1b1b4b',
+                            navy: '#1e1b4b',
+                            text_dark: '#0f172a',
+                            text_body: '#475569',
+                            bg_light: '#f4f6fa',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #414751; background-color: #ffffff; }
+        h1, h2, h3, h4, h5, h6 { color: #0E0A4E; }
+    </style>
+
+    <style>
+        [data-custom-class='body'], [data-custom-class='body'] * {
+            background: transparent !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+        [data-custom-class='title'] {
+            font-size: 32px !important;
+            color: #0E0A4E !important;
+            font-weight: 700 !important;
+            margin-bottom: 8px !important;
+            display: inline-block;
+        }
+        [data-custom-class='subtitle'] {
+            color: #6B7280 !important;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            margin-bottom: 32px !important;
+            display: block;
+        }
+        [data-custom-class='heading_1'] {
+            font-size: 24px !important;
+            color: #0E0A4E !important;
+            font-weight: 600 !important;
+            margin-top: 40px !important;
+            margin-bottom: 16px !important;
+        }
+        [data-custom-class='heading_2'] {
+            font-size: 20px !important;
+            color: #0E0A4E !important;
+            font-weight: 600 !important;
+            margin-top: 24px !important;
+            margin-bottom: 12px !important;
+        }
+        [data-custom-class='body_text'] {
+            color: #4B5563 !important;
+            font-size: 16px !important;
+            line-height: 1.8 !important;
+            margin-bottom: 16px !important;
+        }
+        [data-custom-class='link'] {
+            color: #5046E5 !important;
+            font-size: 16px !important;
+            word-break: break-word !important;
+            font-weight: 500 !important;
+            text-decoration: underline !important;
+        }
+        .privacy-content ul {
+            list-style-type: disc !important;
+            padding-left: 2rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+        .privacy-content ol {
+            list-style-type: decimal !important;
+            padding-left: 2rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+        .privacy-content li {
+            margin-bottom: 0.5rem !important;
+            color: #4B5563 !important;
+            font-size: 16px !important;
+            line-height: 1.8 !important;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+<!-- Top Bar -->
+<div class="bg-gradient-to-r from-[#5046E5] to-[#092A49] text-white">
+    <div class="max-w-[1440px] mx-auto px-2 sm:px-6 lg:px-8 min-h-[38px] flex items-center justify-between flex-nowrap overflow-hidden">
+        <!-- Left -->
+        <div class="flex items-center flex-nowrap min-w-0">
+            <!-- Timing -->
+            <div class="flex items-center px-1 sm:px-4 border-l border-white/15 whitespace-nowrap">
+                <i class="fa-regular fa-clock text-[11px] sm:text-[13px] mr-1 sm:mr-2 shrink-0"></i>
+                <span class="text-[9px] xs:text-[10px] sm:text-[13px] font-medium whitespace-nowrap">9:00AM - 6:00PM</span>
+                <span class="mx-1 sm:mx-2 h-3 sm:h-4 w-px bg-white/30 inline-block"></span>
+                <span class="text-[9px] xs:text-[10px] sm:text-[12px] text-white/80 whitespace-nowrap">Mon - Sat</span>
+            </div>
+            <!-- Phone -->
+            <div class="flex items-center px-[2px] sm:px-4 border-l sm:border-r border-white/15 whitespace-nowrap">
+                <i class="fa-solid fa-phone text-[9px] sm:text-[12px] mr-[2px] sm:mr-2 shrink-0"></i>
+                <span class="text-[9px] xs:text-[10px] sm:text-[13px] font-medium tracking-tight whitespace-nowrap">
+                    <a href="tel:+919326246981">+91 93262 46981</a>
+                </span>
+            </div>
+        </div>
+        <!-- Social Icons -->
+        <div class="flex items-center shrink-0 ml-1 sm:ml-auto">
+            <a href="https://www.linkedin.com/company/108927136/admin/dashboard/" target="_blank" class="w-[28px] sm:w-[35px] h-[30px] sm:h-[35px] flex items-center justify-center border-l border-white/15 hover:bg-white/10 transition-colors">
+                <i class="fa-brands fa-linkedin-in text-[12px] sm:text-[14px]"></i>
+            </a>
+            <a href="https://www.instagram.com/creativewebsolution99?igsh=OWlxcGlvNG1tNG1s" target="_blank" class="w-[28px] sm:w-[35px] h-[30px] sm:h-[35px] flex items-center justify-center border-l border-r border-white/15 hover:bg-white/10 transition-colors">
+                <i class="fa-brands fa-instagram text-[12px] sm:text-[14px]"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="bg-white sticky top-0 z-50 w-full shadow-sm" id="navbar">
+    <div class="max-w-[1440px] mx-auto py-4 lg:py-[24px] px-4 lg:pl-[53px] lg:pr-[78px]">
+        <div class="flex justify-between items-center h-auto sm:min-h-[40px] h-auto lg:px-[46px]">
+            <a href="{% url 'index' %}" class="flex-shrink-0 flex items-center hover:opacity-90 transition group">
+                <img src="{% static 'accounts/images/logo.png' %}" alt="CWS Inventory Logo" class="h-[56px] sm:h-[72px] lg:h-[90px] w-auto object-contain -my-3 sm:-my-5 lg:-my-[20px] group-hover:scale-105 transition-transform duration-300">
+            </a>
+            <div class="flex items-center gap-3 sm:gap-[16px]">
+                <!-- Back Button -->
+                <a href="{% url 'index' %}" class="text-[#414751] hover:text-[#5046E5] text-[13px] sm:text-[14px] font-medium transition flex items-center gap-2 bg-[#F0F3FF] hover:bg-[#E0E7FF] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg">
+                    <i class="fa-solid fa-house text-[12px]"></i>
+                    <span class="hidden sm:inline">Back to Home</span>
+                    <span class="sm:hidden">Back</span>
+                </a>
+                <div class="relative group flex items-center h-[40px] hidden sm:flex">
+                    <button class="text-[#4b5563] hover:text-brand-primary text-[13px] sm:text-[14px] font-medium transition flex items-center justify-center">
+                        Login
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-48 sm:w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="p-2 space-y-1">
+                            <a href="{% url 'admin_login' %}" class="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-brand-primary_light hover:text-brand-primary rounded-lg transition-colors font-medium">
+                                <div class="w-8 h-8 rounded bg-brand-primary/10 flex items-center justify-center mr-3 text-brand-primary shrink-0"><i class="fa-solid fa-user-shield"></i></div>
+                                Admin Portal
+                            </a>
+                            <a href="{% url 'company_login' %}" class="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-brand-primary_light hover:text-brand-primary rounded-lg transition-colors font-medium">
+                                <div class="w-8 h-8 rounded bg-brand-primary/10 flex items-center justify-center mr-3 text-brand-primary shrink-0"><i class="fa-solid fa-store"></i></div>
+                                Business Portal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/#pricing" class="bg-[#5046E5] hover:bg-[#4338ca] text-white flex items-center justify-center px-4 sm:px-[20px] py-2 sm:py-[10px] h-[36px] sm:min-h-[40px] h-auto rounded-[8px] text-[13px] sm:text-[14px] font-medium transition-colors whitespace-nowrap hidden sm:flex">Get Started</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Page Title Hero -->
+<section class="bg-[#F0F3FF] py-16 lg:py-20 border-b border-gray-200">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[100px] text-center">
+        <h1 class="text-[36px] lg:text-[48px] font-bold text-[#0E0A4E] mb-4">Privacy Policy</h1>
+        <p class="text-[#414751] text-[16px] lg:text-[18px]">Last updated: May 15, 2026</p>
+    </div>
+</section>
+
+<!-- Main Privacy Policy Content -->
+<section class="py-16 lg:py-24 bg-[#F8F9FC]">
+    <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-10 lg:p-14 privacy-content overflow-hidden">
+            <div data-custom-class="body">
+                
+                <h1 data-custom-class="title">PRIVACY POLICY</h1>
+                <span data-custom-class="subtitle">Last updated May 15, 2026</span>
+                
+                <p data-custom-class="body_text">
+                    This Privacy Notice for <strong>Creative Web Solution</strong> ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:
+                </p>
+                <ul>
+                    <li>Visit our website at <a href="https://www.cwsinventory.in" target="_blank" data-custom-class="link">https://www.cwsinventory.in</a> or any website of ours that links to this Privacy Notice.</li>
+                    <li>Use <strong>CWS Inventory</strong>. A powerful, fully customizable Inventory Management System that gives you real-time visibility, reduces losses, and streamlines operations across your entire business.</li>
+                    <li>Engage with us in other related ways, including any marketing or events.</li>
+                </ul>
+
+                <p data-custom-class="body_text">
+                    <strong>Questions or concerns?</strong> Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:md@creativewebsolution.in" data-custom-class="link">md@creativewebsolution.in</a>.
+                </p>
+
+                <h2 data-custom-class="heading_1">SUMMARY OF KEY POINTS</h2>
+                <p data-custom-class="body_text"><em>This summary provides key points from our Privacy Notice, but you can find out more details about any of these topics by clicking the link following each key point or by using our <a href="#toc" data-custom-class="link">table of contents</a> below to find the section you are looking for.</em></p>
+                
+                <p data-custom-class="body_text"><strong>What personal information do we process?</strong> When you visit, use, or navigate our Services, we may process personal information depending on how you interact with us and the Services, the choices you make, and the products and features you use.</p>
+                <p data-custom-class="body_text"><strong>Do we process any sensitive personal information?</strong> We do not process sensitive personal information.</p>
+                <p data-custom-class="body_text"><strong>Do we collect any information from third parties?</strong> We do not collect any information from third parties.</p>
+                <p data-custom-class="body_text"><strong>How do we process your information?</strong> We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so.</p>
+                <p data-custom-class="body_text"><strong>In what situations and with which parties do we share personal information?</strong> We may share information in specific situations and with specific third parties.</p>
+                <p data-custom-class="body_text"><strong>How do we keep your information safe?</strong> We have adequate organizational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information.</p>
+                <p data-custom-class="body_text"><strong>What are your rights?</strong> Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information.</p>
+                <p data-custom-class="body_text"><strong>How do you exercise your rights?</strong> The easiest way to exercise your rights is by submitting a data subject access request, or by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.</p>
+                
+                <h2 data-custom-class="heading_1" id="toc">TABLE OF CONTENTS</h2>
+                <ol>
+                    <li><a href="#infocollect" data-custom-class="link">WHAT INFORMATION DO WE COLLECT?</a></li>
+                    <li><a href="#infouse" data-custom-class="link">HOW DO WE PROCESS YOUR INFORMATION?</a></li>
+                    <li><a href="#whoshare" data-custom-class="link">WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</a></li>
+                    <li><a href="#inforetain" data-custom-class="link">HOW LONG DO WE KEEP YOUR INFORMATION?</a></li>
+                    <li><a href="#infosafe" data-custom-class="link">HOW DO WE KEEP YOUR INFORMATION SAFE?</a></li>
+                    <li><a href="#infominors" data-custom-class="link">DO WE COLLECT INFORMATION FROM MINORS?</a></li>
+                    <li><a href="#privacyrights" data-custom-class="link">WHAT ARE YOUR PRIVACY RIGHTS?</a></li>
+                    <li><a href="#DNT" data-custom-class="link">CONTROLS FOR DO-NOT-TRACK FEATURES</a></li>
+                    <li><a href="#policyupdates" data-custom-class="link">DO WE MAKE UPDATES TO THIS NOTICE?</a></li>
+                    <li><a href="#contact" data-custom-class="link">HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</a></li>
+                    <li><a href="#request" data-custom-class="link">HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</a></li>
+                </ol>
+
+                <h2 data-custom-class="heading_1" id="infocollect">1. WHAT INFORMATION DO WE COLLECT?</h2>
+                <h3 data-custom-class="heading_2" id="personalinfo">Personal information you disclose to us</h3>
+                <p data-custom-class="body_text"><em><strong>In Short:</strong> We collect personal information that you provide to us.</em></p>
+                <p data-custom-class="body_text">We collect personal information that you voluntarily provide to us when you register on the Services, express an interest in obtaining information about us or our products and Services, when you participate in activities on the Services, or otherwise when you contact us.</p>
+                <p data-custom-class="body_text"><strong>Personal Information Provided by You.</strong> The personal information that we collect depends on the context of your interactions with us and the Services, the choices you make, and the products and features you use. The personal information we collect may include the following:</p>
+                <ul>
+                    <li>names</li>
+                    <li>phone numbers</li>
+                    <li>email addresses</li>
+                    <li>mailing addresses</li>
+                    <li>passwords</li>
+                    <li>billing addresses</li>
+                    <li>debit/credit card numbers</li>
+                </ul>
+                <p data-custom-class="body_text"><strong>Sensitive Information.</strong> We do not process sensitive information.</p>
+                <p data-custom-class="body_text"><strong>Payment Data.</strong> We may collect data necessary to process your payment if you choose to make purchases, such as your payment instrument number, and the security code associated with your payment instrument. All payment data is handled and stored by Creative Web Solution. You may find their privacy notice link(s) here: <a href="https://www.cwsinventory.in/privacy-policy/" target="_blank" data-custom-class="link">https://www.cwsinventory.in/privacy-policy/</a>.</p>
+                <p data-custom-class="body_text">All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
+
+                <h2 data-custom-class="heading_1" id="infouse">2. HOW DO WE PROCESS YOUR INFORMATION?</h2>
+                <p data-custom-class="body_text"><em><strong>In Short:</strong> We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent.</em></p>
+                <p data-custom-class="body_text"><strong>We process your personal information for a variety of reasons, depending on how you interact with our Services, including:</strong></p>
+                <ul>
+                    <li><strong>To facilitate account creation and authentication and otherwise manage user accounts.</strong> We may process your information so you can create and log in to your account, as well as keep your account in working order.</li>
+                    <li><strong>To deliver and facilitate delivery of services to the user.</strong> We may process your information to provide you with the requested service.</li>
+                    <li><strong>To enable user-to-user communications.</strong> We may process your information if you choose to use any of our offerings that allow for communication with another user.</li>
+                    <li><strong>To request feedback.</strong> We may process your information when necessary to request feedback and to contact you about your use of our Services.</li>
+                    <li><strong>To comply with our legal obligations.</strong> We may process your information to comply with our legal obligations, respond to legal requests, and exercise, establish, or defend our legal rights.</li>
+                </ul>
+
+                <h2 data-custom-class="heading_1" id="whoshare">3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h2>
+                <p data-custom-class="body_text"><em><strong>In Short:</strong> We may share information in specific situations described in this section and/or with third parties.</em></p>
+                <p data-custom-class="body_text">We may need to share your personal information in the following situations:</p>
+                <ul>
+                    <li><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+                </ul>
+
+                <h2 data-custom-class="heading_1" id="inforetain">4. HOW LONG DO WE KEEP YOUR INFORMATION?</h2>
+                <p data-custom-class="body_text"><em><strong>In Short:</strong> We keep your information for as long as necessary to fulfill the purposes outlined in this Privacy Notice unless otherwise required by law.</em></p>
+                <p data-custom-class="body_text">We will only keep your personal information for as long as it is necessary for the purposes set out in this Privacy Notice, unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements). No purpose in this notice will require us keeping your personal information for longer than the period of time in which users have an account with us.</p>
+                <p data-custom-class="body_text">When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.</p>
+
+                <h2 data-custom-class="heading_1" id="infosafe">5. HOW DO WE KEEP YOUR INFORMATION SAFE?</h2>
+                <p data-custom-class="body_text"><em><strong>In Short:</strong> We aim to protect your personal information through a system of organizational and technical security measures.</em></p>
+                <p data-custom-class="body_text">We have implemented appropriate and reasonable technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Although we will do our best to protect your personal information, transmission of personal information to and from our Services is at your own risk. You should only access the Services within a secure environment.</p>
+
+                <h2 data-custom-class="heading_1" id="infominors">6. DO WE COLLECT INFORMATION FROM MINORS?</h2>
+                <p data-custom-class="body_text"><em><strong>In Short:</strong> We do not knowingly collect data from or market to children under 18 years of age.</em></p>
+                <p data-custom-class="body_text">We do not knowingly collect, solicit data from, or market to children under 18 years of age, nor do we knowingly sell such personal information. By using the Services, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent’s use of the Services. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at <a href="mailto:md@creativewebsolution.in" data-custom-class="link">md@creativewebsolution.in</a>.</p>
+
+                <h2 data-custom-class="heading_1" id="privacyrights">7. WHAT ARE YOUR PRIVACY RIGHTS?</h2>
+                <p data-custom-class="body_text"><em><strong>In Short:</strong> You may review, change, or terminate your account at any time, depending on your country, province, or state of residence.</em></p>
+                <p data-custom-class="body_text"><strong><u>Withdrawing your consent:</u></strong> If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?" below.</p>
+                <p data-custom-class="body_text">However, please note that this will not affect the lawfulness of the processing before its withdrawal nor, when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent.</p>
+                
+                <h3 data-custom-class="heading_2">Account Information</h3>
+                <p data-custom-class="body_text">If you would at any time like to review or change the information in your account or terminate your account, you can:</p>
+                <ul>
+                    <li>Log in to your account settings and update your user account.</li>
+                    <li>Contact us using the contact information provided.</li>
+                </ul>
+                <p data-custom-class="body_text">Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms and/or comply with applicable legal requirements.</p>
+                <p data-custom-class="body_text">If you have questions or comments about your privacy rights, you may email us at <a href="mailto:md@creativewebsolution.in" data-custom-class="link">md@creativewebsolution.in</a>.</p>
+
+                <h2 data-custom-class="heading_1" id="DNT">8. CONTROLS FOR DO-NOT-TRACK FEATURES</h2>
+                <p data-custom-class="body_text">Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.</p>
+
+                <h2 data-custom-class="heading_1" id="policyupdates">9. DO WE MAKE UPDATES TO THIS NOTICE?</h2>
+                <p data-custom-class="body_text"><em><strong>In Short:</strong> Yes, we will update this notice as necessary to stay compliant with relevant laws.</em></p>
+                <p data-custom-class="body_text">We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Revised" date at the top of this Privacy Notice. If we make material changes to this Privacy Notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.</p>
+
+                <h2 data-custom-class="heading_1" id="contact">10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
+                <p data-custom-class="body_text">If you have questions or comments about this notice, you may email us at <a href="mailto:md@creativewebsolution.in" data-custom-class="link">md@creativewebsolution.in</a> or contact us by post at:</p>
+                <p data-custom-class="body_text">
+                    <strong>Creative Web Solution</strong><br>
+                    Aundh<br>
+                    Pune, Maharashtra 411067<br>
+                    India
+                </p>
+
+                <h2 data-custom-class="heading_1" id="request">11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
+                <p data-custom-class="body_text">You have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, please fill out and submit a data subject access request.</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#0E0A4E] text-white pt-[60px] pb-[40px]">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-[60px]">
+        <div class="flex flex-col md:flex-row flex-wrap justify-between items-start gap-12 lg:gap-8 mb-[60px] lg:mb-[80px]">
+            
+            <!-- Column 1: Company Info -->
+            <div class="w-full md:w-[45%] lg:w-[330px]">
+                <div class="mb-8">
+                    <img src="{% static 'accounts/images/screenshot_temp.png' %}" alt="Creative Web Solution" class="h-[40px] lg:h-[46px] object-contain" style="filter: brightness(0) invert(1);" />
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-[12px]">
+                        <i class="fa-solid fa-location-dot text-[#5046E5] text-[16px] mt-1 shrink-0"></i>
+                        <a href="https://www.google.com/maps?q=LWT+203+C/O+ITI+RD+above+PNG+near+Parihar+Chowk+Aundh+Maharashtra+411007" target="_blank" class="font-sans text-[14px] leading-relaxed text-[#FFFFFF] hover:text-[#5046E5] transition">
+                            LWT, 203, C/O, ITI RD, above PNG,<br>
+                            near Parihar Chowk, Aundh,<br>
+                            Maharashtra 411007
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-[12px]">
+                        <i class="fa-solid fa-phone text-[#5046E5] text-[16px] shrink-0"></i>
+                        <span class="font-sans text-[14px] leading-relaxed text-[#FFFFFF]"><a href="tel:+919326246981">+91 93262 46981</a></span>
+                    </li>
+                    <li class="flex items-center gap-[12px]">
+                        <i class="fa-solid fa-envelope text-[#5046E5] text-[16px] shrink-0"></i>
+                        <span class="font-sans text-[14px] leading-relaxed text-[#FFFFFF] break-all">
+                            <a href="mailto:info@cwsinventory.in" target="_blank" class="hover:text-blue-400">info@cwsinventory.in</a>
+                        </span>
+                    </li>
+                    <li class="flex items-center gap-[12px]">
+                        <i class="fa-solid fa-globe text-[#5046E5] text-[16px] shrink-0"></i>
+                        <span class="font-sans text-[14px] leading-relaxed text-[#FFFFFF] break-all">
+                            <a href="https://www.creativewebsolution.in" target="_blank">www.creativewebsolution.in</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Links -->
+            <div class="w-full md:w-[45%] lg:w-[188px]">
+                <h4 class="font-semibold text-[16px] leading-[32px] tracking-[1px] text-[#FFFFFF] mb-1">Links</h4>
+                <div class="w-[40px] h-[4px] bg-[#5046E5] rounded-full mb-6"></div>
+                <ul class="space-y-[12px]">
+                    <li>
+                         <a href="{% url 'contact_us' %}" class="flex items-center group">
+                            <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                            <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Contact Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'privacy_policy' %}" class="flex items-center group">
+                            <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                            <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Privacy Policy</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'terms_of_use' %}" class="flex items-center group">
+                            <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                            <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Terms of Use</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'refund_policy' %}" class="flex items-center group">
+                            <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                            <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Refund & Cancellation Policy</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Social Media -->
+            <div class="w-full md:w-[45%] lg:w-[200px]">
+                <h4 class="font-semibold text-[16px] leading-[32px] tracking-[1px] text-[#FFFFFF] mb-1">Social Media</h4>
+                <div class="w-[40px] h-[4px] bg-[#5046E5] rounded-full mb-6"></div>
+                <div class="flex items-center gap-[8px]">
+                    <a href="https://www.instagram.com/creativewebsolution99?igsh=OWlxcGlvNG1tNG1s"  target="_blank" class="w-[42px] h-[42px] bg-gradient-to-tr from-[#F58529] via-[#D62976] to-[#8134AF] rounded-[6px] flex items-center justify-center transition-transform hover:scale-110 overflow-hidden">
+                        <img src="{% static 'accounts/images/instagram_icon.png' %}" alt="Instagram" class="w-[32px] h-[32px] object-contain">
+                    </a>
+                    <a href="https://www.linkedin.com/company/108927136/admin/dashboard/" target="_blank" class="w-[42px] h-[42px] bg-[#0077B5] rounded-[6px] flex items-center justify-center transition-transform hover:scale-110 overflow-hidden">
+                        <img src="{% static 'accounts/images/linkedin_icon.png' %}" alt="LinkedIn" class="w-[32px] h-[32px] object-contain">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 4: Illustration -->
+            <div class="w-full md:w-[45%] lg:w-[300px] flex justify-center md:justify-start lg:justify-end mt-4 lg:mt-0">
+                <img src="{% static 'accounts/images/last.png' %}" alt="Illustration" class="w-[200px] sm:w-[250px] lg:w-full h-auto object-contain opacity-90" />
+            </div>
+
+        </div>
+
+        <div class="pt-8 border-t border-white/10">
+            <p class="font-sans font-normal text-[14px] lg:text-[16px] leading-relaxed text-[#999999] text-center md:text-left">
+                Copyright © 2026 CWS Inventory. ALL RIGHTS RESERVED
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Navbar shadow effect on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

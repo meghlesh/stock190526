@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Failed</title>
+    <link rel="icon" type="image/png" href="{% static 'accounts/images/Tab Logo.png' %}">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            font-family: 'Inter', sans-serif;
+        }
+
+        .failed-card{
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .detail-row{
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .detail-row:last-child{
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F5F7FB]">
+
+    <header class="bg-white sticky top-0 z-50 w-full shadow-sm">
+      <div class="max-w-[1440px] mx-auto py-4 lg:py-5 px-4 sm:px-6 lg:px-[78px]">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <a href="{% url 'index' %}" class="flex-shrink-0 flex items-center group"><img src="{% static 'accounts/images/logo.png' %}" alt="CWS Inventory Logo" class="h-[56px] sm:h-[72px] lg:h-[90px] w-auto object-contain -my-3 sm:-my-5 lg:-my-[20px] group-hover:scale-105 transition-transform duration-300" /></a>
+
+          <!-- Back Button -->
+          <a href="{% url 'company_dashboard' %}" class="text-[#414751] hover:text-[#5046E5] text-[14px] font-medium transition flex items-center gap-2 bg-[#F0F3FF] hover:bg-[#E0E7FF] px-4 py-2 rounded-lg">
+            <i class="fa-solid fa-house text-[12px]"></i>
+            <span class="hidden sm:inline">Back to Home</span>
+            <span class="sm:hidden">Back</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="min-h-screen flex items-center justify-center px-4 py-10">
+        <div class="w-full max-w-[540px] bg-white rounded-[24px] failed-card border border-[#E5E7EB] p-6 sm:p-10">
+            <div class="flex justify-center mb-6">
+                <div class="w-[90px] h-[90px] rounded-full bg-[#FEE2E2] flex items-center justify-center">
+                    <div class="w-[42px] h-[42px] rounded-full border-[3px] border-[#DC2626] flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#DC2626]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h1 class="text-[34px] font-bold text-[#DC2626] mb-3">
+                    Payment Failed!
+                </h1>
+
+                <p class="text-[#6B7280] text-[16px] leading-relaxed max-w-[420px] mx-auto">
+                    We couldn't process your payment successfully.
+                    Please try again using another payment method.
+                </p>
+            </div>
+
+            <div class="mt-10 flex flex-col gap-4">
+
+                <a href="{% url 'pricing' %}" class="w-full h-[54px] bg-[#22C55E] hover:bg-[#16A34A] transition-all duration-300 rounded-[14px] text-white font-semibold text-[16px] flex items-center justify-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582M20 20v-5h-.581M5.423 9A7.962 7.962 0 0112 6c1.85 0 3.55.63 4.903 1.688M18.577 15A7.962 7.962 0 0112 18a7.962 7.962 0 01-6.577-3" />
+                    </svg>
+                    Retry Payment
+                </a>
+
+                <a href="{% url 'contact_us' %}" class="w-full h-[54px] border border-[#D1D5DB] hover:bg-[#F9FAFB] transition-all duration-300 rounded-[14px] text-[#111827] font-semibold text-[16px] flex items-center justify-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-1.414 1.414M15.536 8.464a9 9 0 11-7.072 7.072m7.072-7.072L21 3m-5.464 5.464L9 15" />
+                    </svg>
+                    Contact Support
+                </a>
+            </div>
+
+            <div class="mt-10 text-center">
+                <p class="text-[#9CA3AF] text-[14px]">
+                    If amount was deducted, it will be refunded automatically within 5-7 business days.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#0E0A4E] text-white pt-[60px] pb-[40px]">
+      <div class="max-w-[1320px] mx-auto px-6 lg:px-[60px]">
+        <div class="flex flex-col md:flex-row flex-wrap justify-between items-start gap-12 lg:gap-8 mb-[60px] lg:mb-[80px]">
+          <!-- Column 1: Company Info -->
+          <div class="w-full md:w-[45%] lg:w-[330px]">
+            <div class="mb-8">
+              <img src="{% static 'accounts/images/screenshot_temp.png' %}" alt="Creative Web Solution" class="h-[40px] lg:h-[46px] object-contain" style="filter: brightness(0) invert(1);" />
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-[12px]">
+                <i class="fa-solid fa-location-dot text-[#5046E5] text-[16px] mt-1 shrink-0"></i>
+
+                <a href="https://www.google.com/maps?q=LWT+203+C/O+ITI+RD+above+PNG+near+Parihar+Chowk+Aundh+Maharashtra+411007" target="_blank" class="font-sans text-[14px] leading-relaxed text-[#FFFFFF] hover:text-[#5046E5] transition">
+                  LWT, 203, C/O, ITI RD, above PNG,<br />
+                  near Parihar Chowk, Aundh,<br />
+                  Maharashtra 411007
+                </a>
+              </li>
+              <li class="flex items-center gap-[12px]">
+                <i class="fa-solid fa-phone text-[#5046E5] text-[16px] shrink-0"></i>
+                <span class="font-sans text-[14px] leading-relaxed text-[#FFFFFF]"><a href="tel:+919326246981">+91 93262 46981</a></span>
+              </li>
+              <li class="flex items-center gap-[12px]">
+                <i class="fa-solid fa-envelope text-[#5046E5] text-[16px] shrink-0"></i>
+
+                <span class="font-sans text-[14px] leading-relaxed text-[#FFFFFF] break-all"><a href="mailto:info@cwsinventory.in" target="_blank" class="hover:text-blue-400">info@cwsinventory.in</a></span>
+              </li>
+              <li class="flex items-center gap-[12px]">
+                <i class="fa-solid fa-globe text-[#5046E5] text-[16px] shrink-0"></i>
+                <span class="font-sans text-[14px] leading-relaxed text-[#FFFFFF] break-all"><a href="https://creativewebsolution.in" target="_blank">www.creativewebsolution.in</a></span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Links -->
+          <div class="w-full md:w-[45%] lg:w-[188px]">
+            <h4 class="font-semibold text-[16px] leading-[32px] tracking-[1px] text-[#FFFFFF] mb-1">Links</h4>
+            <div class="w-[40px] h-[4px] bg-[#5046E5] rounded-full mb-6"></div>
+
+            <ul class="space-y-[12px]">
+              <li>
+                <a href="{% url 'contact_us' %}" class="flex items-center group">
+                  <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                  <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Contact Us</span>
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'privacy_policy' %}" class="flex items-center group">
+                  <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                  <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Privacy Policy</span>
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'terms_of_use' %}" class="flex items-center group">
+                  <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                  <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Terms of Use</span>
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'refund_policy' %}" class="flex items-center group">
+                    <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                    <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Refund & Cancellation Policy</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Social Media -->
+          <div class="w-full md:w-[45%] lg:w-[200px]">
+            <h4 class="font-semibold text-[16px] leading-[32px] tracking-[1px] text-[#FFFFFF] mb-1">Social Media</h4>
+            <div class="w-[40px] h-[4px] bg-[#5046E5] rounded-full mb-6"></div>
+
+            <div class="flex items-center gap-[8px]">
+              <!-- <a href="#" class="w-[42px] h-[42px] bg-[#25D366] rounded-[6px] flex items-center justify-center transition-transform hover:scale-110 overflow-hidden"><img src="{% static 'accounts/images/whatsapp_icon.png' %}" alt="WhatsApp" class="w-[32px] h-[32px] object-contain" /></a>
+              <a href="#" class="w-[42px] h-[42px] bg-[#1877F2] rounded-[6px] flex items-center justify-center transition-transform hover:scale-110 overflow-hidden"><img src="{% static 'accounts/images/facebook_icon.png' %}" alt="Facebook" class="w-[32px] h-[32px] object-contain" /></a>-->
+              <a href="https://www.instagram.com/creativewebsolution99?igsh=OWlxcGlvNG1tNG1s"  target="_blank" class="w-[42px] h-[42px] bg-gradient-to-tr from-[#F58529] via-[#D62976] to-[#8134AF] rounded-[6px] flex items-center justify-center transition-transform hover:scale-110 overflow-hidden"><img src="{% static 'accounts/images/instagram_icon.png' %}" alt="Instagram" class="w-[32px] h-[32px] object-contain" /></a>
+              <a href="https://www.linkedin.com/company/108927136/admin/dashboard/" target="_blank" class="w-[42px] h-[42px] bg-[#0077B5] rounded-[6px] flex items-center justify-center transition-transform hover:scale-110 overflow-hidden"><img src="{% static 'accounts/images/linkedin_icon.png' %}" alt="LinkedIn" class="w-[32px] h-[32px] object-contain" /></a>
+            </div>
+          </div>
+
+          <!-- Column 4: Illustration (Right aligned / Responsive) -->
+          <div class="w-full md:w-[45%] lg:w-[300px] flex justify-center md:justify-start lg:justify-end mt-4 lg:mt-0">
+            <img src="{% static 'accounts/images/last.png' %}" alt="Illustration" class="w-[200px] sm:w-[250px] lg:w-full h-auto object-contain opacity-90" />
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/10">
+          <p class="font-sans font-normal text-[14px] lg:text-[16px] leading-relaxed text-[#999999] text-center md:text-left">Copyright © 2026 CWS Inventory. ALL RIGHTS RESERVED</p>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

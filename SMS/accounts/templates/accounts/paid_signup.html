@@ -1,0 +1,716 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Start {{ plan|title }} Account | CWS Inventory</title>
+    <link rel="icon" type="image/png" href="{% static 'accounts/images/Tab Logo.png' %}">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#5046e5',
+                            primary_hover: '#4338ca',
+                            primary_light: '#e0e7ff',
+                            dark_bg: '#0E0A4E', 
+                            bg_light: '#F0F3FF', 
+                        }
+                    },
+                    boxShadow: {
+                        'floating': '0 25px 50px -12px rgba(80, 70, 229, 0.25)',
+                    },
+                    animation: {
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 10s ease-in-out 2s infinite',
+                        'float-fast': 'float 6s ease-in-out 1s infinite',
+                        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) translateX(0px)' },
+                            '33%': { transform: 'translateY(-20px) translateX(10px)' },
+                            '66%': { transform: 'translateY(15px) translateX(-15px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.7', transform: 'scale(1.1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-pattern {
+            background-image: radial-gradient(#5046e5 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-brand-bg_light text-gray-800 min-h-screen flex flex-col selection:bg-brand-primary selection:text-white">
+    <!-- Minimal Header -->
+    <header class="bg-white sticky top-0 z-50 w-full shadow-sm">
+        <div class="max-w-[1440px] mx-auto py-4 lg:py-5 px-4 sm:px-6 lg:px-[78px]">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="{% url 'index' %}" class="flex-shrink-0 flex items-center group">
+                    <img src="{% static 'accounts/images/logo.png' %}" alt="CWS Inventory Logo" class="h-[56px] sm:h-[72px] lg:h-[90px] w-auto object-contain -my-3 sm:-my-5 lg:-my-[20px] group-hover:scale-105 transition-transform duration-300">
+                </a>
+                
+                <!-- Back Button -->
+                <a href="javascript:history.back()" class="text-[#414751] hover:text-[#5046E5] text-[14px] font-medium transition flex items-center gap-2 bg-[#F0F3FF] hover:bg-[#E0E7FF] px-4 py-2 rounded-lg">
+                    <i class="fa-solid fa-house text-[12px]"></i>
+                    <span class="hidden sm:inline">Back to Home</span>
+                    <span class="sm:hidden">Back</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow relative overflow-hidden flex items-center justify-center py-10 lg:py-12 px-4 sm:px-6">
+        
+        <!-- Background Decor -->
+        <div class="absolute inset-0 bg-pattern pointer-events-none z-0"></div>
+
+        <!-- Split Layout Container -->
+        <div class="max-w-[1100px] w-full bg-white rounded-[24px] shadow-floating overflow-hidden flex flex-col lg:flex-row border border-gray-100 relative z-10">
+            
+            <!-- LEFT PANEL: Dynamic Brand/Value Proposition Area -->
+            <div class="w-full lg:w-[45%] bg-[#0E0A4E] text-white p-8 lg:p-12 relative overflow-hidden flex flex-col justify-between min-h-[300px]">
+                
+                <!-- Animated Floating Elements (The "Movable" parts) -->
+                <!-- Big Blue/Purple Glow -->
+                <div class="absolute -top-[20%] -left-[20%] w-[350px] h-[350px] bg-brand-primary rounded-full mix-blend-screen filter blur-[80px] opacity-40 animate-float-slow pointer-events-none"></div>
+                <!-- Small Cyan Glow -->
+                <div class="absolute top-[40%] -right-[10%] w-[200px] h-[200px] bg-[#38bdf8] rounded-full mix-blend-screen filter blur-[60px] opacity-30 animate-float-delayed pointer-events-none"></div>
+                <!-- Bottom Purple Glow -->
+                <div class="absolute -bottom-[20%] left-[10%] w-[250px] h-[250px] bg-[#818cf8] rounded-full mix-blend-screen filter blur-[70px] opacity-30 animate-float-fast pointer-events-none"></div>
+                
+                <!-- 3D-ish Floating Cube Graphic -->
+                <div class="absolute top-[10%] right-[10%] opacity-20 animate-pulse-glow pointer-events-none">
+                    <i class="fa-solid fa-cubes text-[120px] text-white"></i>
+                </div>
+
+                <!-- Content Overlay (z-10 to stay above animations) -->
+                <div class="relative z-10">
+                    <div class="inline-flex items-center justify-center bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full mb-6 shadow-sm">
+                        <i class="fa-solid fa-gift text-[#A5B4FC] text-[12px] mr-2"></i>
+                        <span class="text-[#E0E7FF] text-[12px] font-bold uppercase tracking-wider">{{ plan }} Account</span>
+                    </div>
+                    
+                    <h2 class="text-[32px] lg:text-[40px] font-bold leading-[1.2] mb-4">
+                        Take control of your inventory today.
+                    </h2>
+                    
+                    <div class="w-[40px] h-[4px] bg-[#5046E5] rounded-full mb-6"></div>
+                    
+                    <p class="text-[#cbd5e1] text-[16px] leading-relaxed mb-8">
+                        Experience the full power of CWS Inventory. Automate your workflows, eliminate stockouts, and grow your business with zero risk.
+                    </p>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check text-white text-[10px]"></i>
+                            </div>
+                            <span class="text-[15px] font-medium text-white">Secure Razorpay Payment</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check text-white text-[10px]"></i>
+                            </div>
+                            <span class="text-[15px] font-medium text-white">Full access to all features</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-check text-white text-[10px]"></i>
+                            </div>
+                            <span class="text-[15px] font-medium text-white">Instant account activation</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="relative z-10 mt-12 lg:mt-0 pt-8 border-t border-white/10 hidden lg:block">
+                    <p class="text-sm text-[#A5B4FC] italic">Trusted by 500+ businesses across multiple industries.</p>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: Sign Up Form -->
+            <div class="w-full lg:w-[55%] p-8 lg:p-12 bg-white relative">
+                
+                <div class="mb-8">
+                    <h3 class="text-[24px] lg:text-[28px] font-bold text-[#0E0A4E] mb-2">Create Your Account</h3>
+                    <p class="text-[#414751] text-[15px]">Set up your {{ plan|title }} Account in less than 2 minutes.</p>
+                </div>
+                
+                {% if messages %}
+                    <div class="mb-6 space-y-2">
+                    {% for message in messages %}
+                        <div class="p-4 rounded-xl text-sm flex items-start gap-3 {% if message.tags == 'error' %}bg-red-50 text-red-700 border border-red-100{% else %}bg-green-50 text-green-700 border border-green-100{% endif %}">
+                            <i class="fa-solid {% if message.tags == 'error' %}fa-circle-exclamation text-red-500{% else %}fa-circle-check text-green-500{% endif %} mt-0.5"></i>
+                            <p>{{ message }}</p>
+                        </div>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+
+                <form method="POST" id="signupForm" class="space-y-5">
+                    {% csrf_token %}
+                    
+                    <!-- Grid for shorter fields to save vertical space -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Full Name <span class="text-red-500">*</span></label>
+                            <input type="text" name="full_name" required placeholder="John Doe" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400 group-hover">
+                        </div>
+
+                        <!-- Business Name -->
+                        <div>
+                            <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Business Name <span class="text-red-500">*</span></label>
+                            <input type="text" name="business_name" required placeholder="Company Ltd" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400">
+                            <span id="business-error" class="validation-error text-red-500 text-[12px] mt-1.5 block font-medium hidden"></span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- Work Email -->
+                        <div>
+                            <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Work Email <span class="text-red-500">*</span></label>
+                            <input type="email" name="email" required placeholder="john@company.com" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400">
+                            <span id="email-error" class="validation-error text-red-500 text-[12px] mt-1.5 block font-medium hidden"></span>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Phone Number <span class="text-red-500">*</span></label>
+                            <input type="text" name="phone" required placeholder="+91 90000 00000" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400">
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Password <span class="text-red-500">*</span></label>
+                        <div class="relative">
+                            <input type="password" name="password" id="password" required placeholder="Min. 6 characters" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all pr-12 placeholder-gray-400">
+                            <button type="button" class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-brand-primary focus:outline-none transition-colors" onclick="togglePassword('password', this)">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <!-- Password Strength Meter -->
+                        <div class="mt-2" id="passwordStrengthContainer" style="display: none;">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-[11px] font-medium text-gray-500">Password Strength</span>
+                                <span id="strengthText" class="text-[11px] font-bold text-gray-400">None</span>
+                            </div>
+                            <div class="flex gap-1 h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
+                                <div id="strengthBar1" class="h-full w-1/4 bg-gray-200 transition-colors duration-300"></div>
+                                <div id="strengthBar2" class="h-full w-1/4 bg-gray-200 transition-colors duration-300"></div>
+                                <div id="strengthBar3" class="h-full w-1/4 bg-gray-200 transition-colors duration-300"></div>
+                                <div id="strengthBar4" class="h-full w-1/4 bg-gray-200 transition-colors duration-300"></div>
+                            </div>
+                            <p class="text-[10px] text-gray-400 mt-1.5">Must be 6-20 characters with uppercase, lowercase, number & special character.</p>
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div>
+                        <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Confirm Password <span class="text-red-500">*</span></label>
+                        <div class="relative">
+                            <input type="password" name="confirm_password" id="confirm_password" required placeholder="Confirm your password" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all pr-12 placeholder-gray-400">
+                            <button type="button" class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-brand-primary focus:outline-none transition-colors" onclick="togglePassword('confirm_password', this)">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        <span id="confirm-password-error" class="validation-error text-red-500 text-[12px] mt-1.5 block font-medium hidden">Passwords do not match.</span>
+                    </div>
+
+                    <!-- CAPTCHA -->
+                    <div class="captcha-container">
+                        <div class="flex items-center gap-4 mb-1.5">
+                            <label class="block text-[13px] font-semibold text-[#0E0A4E] uppercase tracking-wide">CAPTCHA <span class="text-red-500">*</span></label>
+                            <button type="button" class="text-[12px] text-[#A5B4FC] hover:text-[#5046E5] font-medium transition-colors" onclick="clearCaptcha()">Clear</button>
+                        </div>
+                        <div class="relative">
+                            <input type="text" id="captchaInput" name="captcha" required placeholder="Type below image text" class="w-full px-4 py-3 bg-[#F9FAFB] text-[15px] border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary transition-all placeholder-gray-400" autocomplete="off">
+                            <span id="captchaError" class="validation-error text-red-500 text-[12px] mt-1.5 hidden font-medium block">Invalid captcha.</span>
+                        </div>
+                        <div class="flex items-center gap-3 mt-3">
+                            <div class="border border-gray-200 rounded-lg bg-white inline-block overflow-hidden shadow-sm">
+                                <canvas id="captchaCanvas" width="150" height="50" class="block cursor-pointer" onclick="generateCaptcha()"></canvas>
+                            </div>
+                            <button type="button" class="text-gray-400 hover:text-[#5046E5] transition-colors p-2" onclick="generateCaptcha()" title="Reload CAPTCHA">
+                                <i class="fa-solid fa-rotate-right text-[18px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-2">
+                        <button type="submit" id="submitBtn" disabled class="w-full bg-[#5046E5] hover:bg-[#4338ca] text-white font-semibold py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg opacity-50 cursor-not-allowed flex items-center justify-center gap-2 text-[16px] transform hover:-translate-y-0.5">
+                            <span>Start {{ plan|title }} Account Now </span>
+                            <i class="fa-solid fa-rocket text-[14px]"></i>
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Login Link -->
+                <p class="mt-8 text-center text-[14px] text-gray-500">
+                    Already have an account? 
+                    <a href="{% url 'company_login' %}" class="text-[#5046E5] font-semibold hover:underline hover:text-[#4338ca] transition-colors">Log in here</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Form Validation Script -->
+    <script>
+        // Toggle Password visibility logic
+        window.togglePassword = function(fieldId, btn) {
+            const field = document.getElementById(fieldId);
+            const icon = btn.querySelector('i');
+            
+            if (field.type === 'password') {
+                field.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                field.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        };
+
+        // CAPTCHA Logic
+        let currentCaptcha = '';
+
+        window.generateCaptcha = function(keepError = false) {
+            const canvas = document.getElementById('captchaCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Background
+            ctx.fillStyle = '#f8fafc';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Generate random string (alphanumeric)
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+            let captchaStr = '';
+            for(let i = 0; i < 6; i++) {
+                captchaStr += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            currentCaptcha = captchaStr;
+            
+            // Draw noise lines
+            for(let i = 0; i < 5; i++) {
+                ctx.beginPath();
+                ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.strokeStyle = `rgba(${Math.random()*150},${Math.random()*150},${Math.random()*150},0.5)`;
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+            }
+            
+            // Draw text
+            ctx.font = 'bold 28px Inter, sans-serif';
+            ctx.textBaseline = 'middle';
+            
+            for(let i = 0; i < captchaStr.length; i++) {
+                ctx.save();
+                const x = 20 + (i * 20);
+                const y = 25;
+                
+                // Random rotation between -15 and 15 degrees
+                const angle = (Math.random() - 0.5) * 0.5;
+                ctx.translate(x, y);
+                ctx.rotate(angle);
+                
+                // Random color for each character
+                ctx.fillStyle = `rgb(${Math.random()*100},${Math.random()*100},${Math.random()*200})`;
+                ctx.fillText(captchaStr[i], 0, 0);
+                ctx.restore();
+            }
+            
+            // Draw noise dots
+            for(let i = 0; i < 30; i++) {
+                ctx.beginPath();
+                ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 2, 0, 2 * Math.PI);
+                ctx.fillStyle = `rgba(${Math.random()*150},${Math.random()*150},${Math.random()*150},0.6)`;
+                ctx.fill();
+            }
+            
+            // Reset input and error
+            const input = document.getElementById('captchaInput');
+            if (input) input.value = '';
+            
+            if (!keepError) {
+                const err = document.getElementById('captchaError');
+                if (err) err.classList.add('hidden');
+                if (input) {
+                    input.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                    input.classList.add('border-gray-200', 'focus:ring-brand-primary/20');
+                }
+            }
+        };
+
+        window.clearCaptcha = function() {
+            const input = document.getElementById('captchaInput');
+            if (input) {
+                input.value = '';
+                input.focus();
+                input.dispatchEvent(new Event('input')); // Trigger form validation
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            generateCaptcha();
+            const validators = {
+                full_name: { test: (val) => /^[A-Za-z][A-Za-z\s]*$/.test(val), message: 'Name must start with a letter and contain only alphabets/spaces.', maxLength: 30 },
+                email: { test: (val) => /^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(val), message: 'Please enter a valid email address.' },
+                phone: { test: (val) => /^\d{10}$/.test(val), message: 'Phone number must be exactly 10 digits.', maxLength: 10 },
+                business_name: { test: (val) => /^[^\s]/.test(val), message: 'Business name cannot start with a space.', maxLength: 30 },
+                password: { test: (val) => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,20}$/.test(val) && !val.startsWith(' '), message: 'Must be 6-20 characters with uppercase, lowercase, number & special character.', maxLength: 20 },
+                confirm_password: { test: (val) => true, message: '', maxLength: 20 }
+            };
+
+            function updatePasswordStrength(val) {
+                const container = document.getElementById('passwordStrengthContainer');
+                if (val.length === 0) {
+                    container.style.display = 'none';
+                    return;
+                }
+                container.style.display = 'block';
+
+                let strength = 0;
+                let hasLower = /[a-z]/.test(val);
+                let hasUpper = /[A-Z]/.test(val);
+                let hasNumber = /\d/.test(val);
+                let hasSpecial = /[^A-Za-z0-9]/.test(val);
+                
+                let rulesPassed = [hasLower, hasUpper, hasNumber, hasSpecial].filter(Boolean).length;
+                
+                if (val.length >= 6) {
+                    if (rulesPassed === 4) strength = 4;
+                    else if (rulesPassed >= 3) strength = 3;
+                    else if (rulesPassed >= 2) strength = 2;
+                    else strength = 1;
+                } else {
+                    strength = 1;
+                }
+
+                const bars = [
+                    document.getElementById('strengthBar1'),
+                    document.getElementById('strengthBar2'),
+                    document.getElementById('strengthBar3'),
+                    document.getElementById('strengthBar4')
+                ];
+                const text = document.getElementById('strengthText');
+
+                // Reset
+                bars.forEach(b => { b.className = 'h-full w-1/4 bg-gray-200 transition-colors duration-300'; });
+
+                if (strength === 1) {
+                    bars[0].classList.replace('bg-gray-200', 'bg-red-500');
+                    text.textContent = 'Weak';
+                    text.className = 'text-[11px] font-bold text-red-500';
+                } else if (strength === 2) {
+                    bars[0].classList.replace('bg-gray-200', 'bg-orange-400');
+                    bars[1].classList.replace('bg-gray-200', 'bg-orange-400');
+                    text.textContent = 'Fair';
+                    text.className = 'text-[11px] font-bold text-orange-400';
+                } else if (strength === 3) {
+                    bars[0].classList.replace('bg-gray-200', 'bg-blue-400');
+                    bars[1].classList.replace('bg-gray-200', 'bg-blue-400');
+                    bars[2].classList.replace('bg-gray-200', 'bg-blue-400');
+                    text.textContent = 'Good';
+                    text.className = 'text-[11px] font-bold text-blue-400';
+                } else if (strength === 4) {
+                    bars[0].classList.replace('bg-gray-200', 'bg-green-500');
+                    bars[1].classList.replace('bg-gray-200', 'bg-green-500');
+                    bars[2].classList.replace('bg-gray-200', 'bg-green-500');
+                    bars[3].classList.replace('bg-gray-200', 'bg-green-500');
+                    text.textContent = 'Strong';
+                    text.className = 'text-[11px] font-bold text-green-500';
+                }
+            }
+
+            function validateInput(input) {
+                const name = input.name;
+                if (!validators[name]) return true;
+
+                const val = input.value;
+                const validator = validators[name];
+
+                let isValid = val === '' ? true : validator.test(val);
+                
+                // For password confirmation logic
+                if (name === 'confirm_password' || name === 'password') {
+                    const pwd = document.getElementById('password');
+                    const cpwd = document.getElementById('confirm_password');
+                    const cpwdError = document.getElementById('confirm-password-error');
+                    
+                    if (cpwd.value !== '' && pwd.value !== cpwd.value) {
+                        cpwdError.classList.remove('hidden');
+                        cpwd.classList.add('border-red-500', 'focus:ring-red-500/20');
+                        cpwd.classList.remove('border-gray-200', 'focus:ring-brand-primary/20');
+                        if (name === 'confirm_password') isValid = false;
+                    } else {
+                        cpwdError.classList.add('hidden');
+                        cpwd.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                        cpwd.classList.add('border-gray-200', 'focus:ring-brand-primary/20');
+                    }
+                }
+
+                if (name === 'confirm_password' || name === 'captcha') return isValid;
+
+                let errorSpan;
+                if (input.parentNode.classList.contains('relative')) {
+                    errorSpan = input.parentNode.nextElementSibling;
+                    if (!errorSpan || !errorSpan.classList.contains('validation-error')) {
+                        errorSpan = document.createElement('span');
+                        errorSpan.classList.add('validation-error', 'text-red-500', 'text-[12px]', 'mt-1.5', 'block', 'font-medium');
+                        input.parentNode.parentNode.insertBefore(errorSpan, input.parentNode.nextSibling);
+                    }
+                } else {
+                    errorSpan = input.nextElementSibling;
+                    if (!errorSpan || !errorSpan.classList.contains('validation-error')) {
+                        errorSpan = document.createElement('span');
+                        errorSpan.classList.add('validation-error', 'text-red-500', 'text-[12px]', 'mt-1.5', 'block', 'font-medium');
+                        input.parentNode.insertBefore(errorSpan, input.nextSibling);
+                    }
+                }
+
+                if (!isValid) {
+                    errorSpan.textContent = validator.message;
+                    input.classList.add('border-red-500', 'focus:ring-red-500/20');
+                    input.classList.remove('border-gray-200', 'focus:ring-brand-primary/20');
+                    return false;
+                } else {
+                    errorSpan.textContent = '';
+                    input.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                    input.classList.add('border-gray-200', 'focus:ring-brand-primary/20');
+                    return true;
+                }
+            }
+
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                const inputs = form.querySelectorAll('input, textarea');
+                const submitBtn = form.querySelector('button[type="submit"]');
+
+                function checkFormValidity() {
+                    let formIsValid = true;
+                    inputs.forEach(input => {
+                        if (input.required && input.value.trim() === '') {
+                            formIsValid = false;
+                        } else if (input.value !== '') {
+                            const name = input.name;
+                            if (validators[name] && !validators[name].test(input.value)) {
+                                formIsValid = false;
+                            }
+                        }
+                    });
+                    
+                    const pwd = document.getElementById('password');
+                    const cpwd = document.getElementById('confirm_password');
+                    if (pwd && cpwd && pwd.value !== cpwd.value) {
+                        formIsValid = false;
+                    }
+
+                    if (formIsValid) {
+                        submitBtn.removeAttribute('disabled');
+                        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    } else {
+                        submitBtn.setAttribute('disabled', 'disabled');
+                        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    }
+                }
+
+                inputs.forEach(input => {
+                    if (validators[input.name] && validators[input.name].maxLength) {
+                        input.setAttribute('maxlength', validators[input.name].maxLength);
+                    }
+                    input.addEventListener('keydown', function(e) {
+                        if (e.key === ' ' && this.selectionStart === 0) {
+                            e.preventDefault();
+                        }
+                    });
+                    input.addEventListener('input', function(e) {
+                        if (this.value.startsWith(' ')) {
+                            this.value = this.value.trimStart();
+                        }
+                        
+                        if (this.name === 'password') {
+                            updatePasswordStrength(this.value);
+                        }
+                        
+                        validateInput(this);
+                        checkFormValidity();
+                        
+                        // Clear captcha error if they start typing again
+                        if (e.target && e.target.id === 'captchaInput') {
+                            const captchaError = document.getElementById('captchaError');
+                            if (captchaError) captchaError.classList.add('hidden');
+                            e.target.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                            e.target.classList.add('border-gray-200', 'focus:ring-brand-primary/20');
+                        }
+                    });
+                    input.addEventListener('blur', function() {
+                        validateInput(this);
+                        checkFormValidity();
+                    });
+                });
+
+                form.addEventListener('submit', function(e) {
+                    let formIsValid = true;
+                    inputs.forEach(input => {
+                        if (input.required && input.value === '') {
+                            formIsValid = false;
+                        } else if (input.value !== '') {
+                            if (!validateInput(input)) {
+                                formIsValid = false;
+                            }
+                        }
+                    });
+                    
+                    const pwd = document.getElementById('password');
+                    const cpwd = document.getElementById('confirm_password');
+                    if (pwd && cpwd && pwd.value !== cpwd.value) {
+                        formIsValid = false;
+                        validateInput(cpwd);
+                    }
+
+                    // CAPTCHA Validation on Submit
+                    const captchaInput = document.getElementById('captchaInput');
+                    const captchaError = document.getElementById('captchaError');
+                    if (captchaInput && captchaInput.value !== currentCaptcha) {
+                        formIsValid = false;
+                        captchaError.classList.remove('hidden');
+                        captchaInput.classList.add('border-red-500', 'focus:ring-red-500/20');
+                        captchaInput.classList.remove('border-gray-200', 'focus:ring-brand-primary/20');
+                        generateCaptcha(true); // Reload captcha on wrong attempt but keep error visible
+                    } else if (captchaInput) {
+                        captchaError.classList.add('hidden');
+                        captchaInput.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                        captchaInput.classList.add('border-gray-200', 'focus:ring-brand-primary/20');
+                    }
+
+                    if (!formIsValid) {
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
+                    }
+                });
+                
+                checkFormValidity();
+            });
+        });
+    </script>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("signupForm").addEventListener("submit", async function(e) {
+                e.preventDefault();
+
+            const submitBtn = document.getElementById("submitBtn");
+            if (submitBtn.disabled) {return;}
+            submitBtn.disabled = true;
+            const formData = new FormData(this);
+
+            try {
+
+                const signupResponse = await fetch(window.location.href, {
+                        method: "POST",
+                        body: formData,
+                        credentials: "same-origin",
+                        headers: {
+                            "X-Requested-With": "XMLHttpRequest"
+                        }
+                    }
+                );
+
+                const signupData = await signupResponse.json();
+
+                if (signupData.status !== "success") {
+
+                    document.getElementById("email-error").classList.add("hidden");
+                    document.getElementById("business-error").classList.add("hidden");
+
+                    if (signupData.field === "email") {
+                        const emailError = document.getElementById("email-error");
+                        emailError.textContent = signupData.message;
+                        emailError.classList.remove("hidden");
+                    }
+
+                    if (signupData.field === "business_name") {
+                        const businessError = document.getElementById("business-error");
+                        businessError.textContent = signupData.message;
+                        businessError.classList.remove("hidden");
+                    }
+
+                    submitBtn.disabled = false;
+                    return;
+                }
+
+                var options = {
+                    "key": signupData.razorpay_key,
+                    "amount": signupData.amount,
+                    "currency": "INR",
+                    "name": "Stock Inventory",
+                    "description": `${signupData.plan} Plan Payment`,
+                    "image": "https://res.cloudinary.com/dhjoznaik/image/upload/q_auto/f_auto/v1779084115/SMS_logo_jwiscc.png",
+                    "order_id": signupData.order_id,
+                    "callback_url": window.location.origin + "{% url 'signup_payment_success' %}",
+
+                    "prefill": {
+                        "name": formData.get("full_name"),
+                        "email": formData.get("email"),
+                        "contact": formData.get("phone")
+                    },
+
+                    "theme": {"color": "#5046E5"},
+                    "modal": {"ondismiss": function () {submitBtn.disabled = false;}}
+                };
+
+                var rzp1 = new Razorpay(options);
+
+                rzp1.on('payment.failed', function (response) {
+                    console.log(response.error);
+                    window.location.href = "{% url 'payment-failed-index' %}";
+                })
+
+                rzp1.open();
+            }
+
+                catch (error) {
+                    console.log(error);
+                    alert("Something went wrong");
+                    submitBtn.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

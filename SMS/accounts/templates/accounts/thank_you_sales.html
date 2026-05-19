@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Thank You | CWS Inventory Enterprise</title>
+    <link rel="icon" type="image/png" href="{% static 'accounts/images/Tab Logo.png' %}">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#5046e5',
+                            primary_hover: '#4338ca',
+                            primary_light: '#e0e7ff',
+                            dark_bg: '#0E0A4E', 
+                            bg_light: '#F0F3FF', 
+                        }
+                    },
+                    boxShadow: {
+                        'floating': '0 25px 50px -12px rgba(80, 70, 229, 0.25)',
+                    },
+                    animation: {
+                        'spin-slow': 'spin 40s linear infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                        'float-delayed': 'float 5s ease-in-out 2s infinite',
+                        'pop-in': 'popIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'pulse-ring': 'pulseRing 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        popIn: {
+                            '0%': { transform: 'scale(0)', opacity: '0' },
+                            '60%': { transform: 'scale(1.15)' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        pulseRing: {
+                            '0%, 100%': { opacity: '0.1', transform: 'scale(1)' },
+                            '50%': { opacity: '0.25', transform: 'scale(1.25)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-pattern {
+            background-image: radial-gradient(#5046e5 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-brand-bg_light text-gray-800 min-h-screen flex flex-col selection:bg-brand-primary selection:text-white relative overflow-x-hidden">
+
+    <!-- Minimal Header -->
+    <header class="bg-white sticky top-0 z-50 w-full shadow-sm">
+        <div class="max-w-[1440px] mx-auto py-4 lg:py-5 px-4 sm:px-6 lg:px-[78px]">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="{% url 'index' %}" class="flex-shrink-0 flex items-center group">
+                    <img src="{% static 'accounts/images/logo.png' %}" alt="CWS Inventory Logo" class="h-[56px] sm:h-[72px] lg:h-[90px] w-auto object-contain -my-3 sm:-my-5 lg:-my-[20px] group-hover:scale-105 transition-transform duration-300">
+                </a>
+                
+                <!-- Back Button -->
+                <a href="{% url 'index' %}" class="text-[#414751] hover:text-[#5046E5] text-[14px] font-medium transition flex items-center gap-2 bg-[#F0F3FF] hover:bg-[#E0E7FF] px-4 py-2 rounded-lg">
+                    <i class="fa-solid fa-house text-[12px]"></i>
+                    <span class="hidden sm:inline">Back to Home</span>
+                    <span class="sm:hidden">Home</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow relative w-full flex items-center justify-center py-10 px-4 sm:px-6 min-h-[calc(100vh-80px)]">
+        
+        <!-- Background Decor -->
+        <div class="absolute inset-0 bg-pattern pointer-events-none z-0"></div>
+
+        <!-- MOVABLE ANIMATIONS: Floating background icons -->
+        <div class="absolute top-[15%] right-[10%] text-[#5046E5]/10 text-[60px] lg:text-[90px] animate-float pointer-events-none z-0 hidden md:block" style="transform: rotate(15deg);">
+            <i class="fa-solid fa-paper-plane"></i>
+        </div>
+        <div class="absolute bottom-[20%] left-[10%] text-[#5046E5]/10 text-[70px] lg:text-[110px] animate-float-delayed pointer-events-none z-0 hidden md:block" style="transform: rotate(-10deg);">
+            <i class="fa-solid fa-handshake-angle"></i>
+        </div>
+        
+        <!-- MOVABLE ANIMATIONS: Spinning Rings (from Landing Page) -->
+        <svg class="absolute animate-spin-slow opacity-30 pointer-events-none z-0"
+             style="top: -100px; left: -100px;"
+             width="436.35" height="436.35" viewBox="0 0 436.35 436.35" fill="none">
+            <circle cx="218.175" cy="218.175" r="170" stroke="#5046E5" stroke-width="60" stroke-opacity="0.03" />
+            <circle cx="218.175" cy="218.175" r="210" stroke="#5046E5" stroke-width="2" stroke-opacity="0.05" />
+            <circle cx="218.175" cy="218.175" r="110" stroke="#5046E5" stroke-width="1.5" stroke-opacity="0.1" />
+        </svg>
+
+        <!-- Main Card Container -->
+        <div class="w-full max-w-[600px] bg-white rounded-[24px] shadow-floating relative z-10 border border-gray-100 flex flex-col p-8 sm:p-12 text-center">
+            
+            <!-- Animated Success Paper Plane Icon -->
+            <div class="relative w-[100px] h-[100px] mx-auto mb-8 flex items-center justify-center">
+                <!-- Pulsing ring behind icon -->
+                <div class="absolute inset-0 bg-[#3b82f6] rounded-full animate-pulse-ring"></div>
+                <!-- Popping icon container -->
+                <div class="relative w-[80px] h-[80px] bg-gradient-to-tr from-[#3b82f6] to-[#60a5fa] rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(59,130,246,0.3)] animate-pop-in">
+                    <i class="fa-solid fa-paper-plane text-[36px] text-white -ml-1 mt-1"></i>
+                </div>
+            </div>
+            
+            <h2 class="text-[32px] sm:text-[36px] font-bold text-[#0E0A4E] mb-4">Request Received!</h2>
+            
+           
+
+            <!-- Information Callout Box -->
+            <div class="bg-[#F0F3FF] border border-[#E5E4FF] rounded-[16px] p-5 mb-8 text-left transition-all hover:shadow-md flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm border border-gray-100">
+                    <i class="fa-solid fa-clipboard-list text-[#5046E5] text-[16px]"></i>
+                </div>
+                <div>
+                    <p class="text-[14px] text-[#414751] font-medium leading-relaxed mt-0.5">
+                        <strong class="text-[#0E0A4E]">What's next?</strong> One of our enterprise inventory experts is currently reviewing your details and will reach out to schedule a personalized consultation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col gap-4">
+                <a href="{% url 'index' %}" 
+                   class="w-full bg-gradient-to-r from-[#5046E5] to-[#4338ca] hover:from-[#4338ca] hover:to-[#3730a3] text-white font-semibold py-3.5 rounded-xl transition-all shadow-[0px_4px_25px_rgba(80,70,229,0.31)] hover:shadow-[0px_6px_35px_rgba(80,70,229,0.4)] flex items-center justify-center gap-2 text-[16px] transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-arrow-left text-[14px]"></i>
+                    <span>Return to Home</span>
+                </a>
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+</html>

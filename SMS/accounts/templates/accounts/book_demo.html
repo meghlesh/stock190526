@@ -1,0 +1,607 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Book a Demo | CWS Inventory</title>
+    <link rel="icon" type="image/png" href="{% static 'accounts/images/Tab Logo.png' %}">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#5046e5',
+                            primary_hover: '#4338ca',
+                            primary_light: '#e0e7ff',
+                            dark_bg: '#0E0A4E', 
+                            bg_light: '#F0F3FF', 
+                        }
+                    },
+                    boxShadow: {
+                        'floating': '0 25px 50px -12px rgba(80, 70, 229, 0.25)',
+                    },
+                    animation: {
+                        'spin-slow': 'spin 40s linear infinite',
+                        'spin-slow-reverse': 'spin 30s linear infinite reverse',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-pattern {
+            background-image: radial-gradient(#5046e5 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        /* Custom scrollbar for dropdown */
+        .dropdown-menu::-webkit-scrollbar { width: 6px; }
+        .dropdown-menu::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 8px; }
+        .dropdown-menu::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+        .dropdown-menu::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="font-sans antialiased bg-brand-bg_light text-gray-800 min-h-screen flex flex-col selection:bg-brand-primary selection:text-white">
+
+    <!-- Minimal Header -->
+    <header class="bg-white sticky top-0 z-50 w-full shadow-sm">
+        <div class="max-w-[1440px] mx-auto py-4 lg:py-5 px-4 sm:px-6 lg:px-[78px]">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="{% url 'index' %}" class="flex-shrink-0 flex items-center group">
+                    <img src="{% static 'accounts/images/logo.png' %}" alt="CWS Inventory Logo" class="h-[56px] sm:h-[72px] lg:h-[90px] w-auto object-contain -my-3 sm:-my-5 lg:-my-[20px] group-hover:scale-105 transition-transform duration-300">
+                </a>
+                
+                <!-- Back Button -->
+                <a href="javascript:history.back()" class="text-[#414751] hover:text-[#5046E5] text-[14px] font-medium transition flex items-center gap-2 bg-[#F0F3FF] hover:bg-[#E0E7FF] px-4 py-2 rounded-lg">
+                    <i class="fa-solid fa-house text-[12px]"></i>
+                    <span class="hidden sm:inline">Back to Home</span>
+                    <span class="sm:hidden">Back</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <!-- FIX 1: Removed flex, items-center, and overflow-hidden to fix iframe touch coordinates on zoom -->
+    <main class="flex-grow relative w-full py-8 lg:py-12 px-4 sm:px-6">
+        
+        <!-- Background Decor from Landing Page -->
+        <div class="absolute inset-0 bg-pattern pointer-events-none z-0"></div>
+
+        <!-- Main Card Container -->
+        <!-- FIX 2: Added mx-auto for centering, removed overflow-hidden which clips touch events on iOS -->
+        <div class="max-w-[1200px] w-full mx-auto bg-white rounded-[24px] shadow-floating relative z-10 border border-gray-100 flex flex-col">
+            
+            <!-- CARD HEADER (Dark Gradient & Animations) -->
+            <!-- FIX 3: Added rounded-t-[24px] since we removed overflow-hidden from parent -->
+            <div class="w-full relative overflow-hidden rounded-t-[24px] px-8 py-10 lg:px-12 lg:py-14 text-center"
+                 style="background: linear-gradient(135deg, #092A49 0%, #0E0A4E 100%);">
+                
+                <!-- Animated SVG Rings from Landing Page (Movable) -->
+                <!-- LEFT MULTI RINGS -->
+                <svg class="absolute animate-spin-slow opacity-60 pointer-events-none"
+                     style="top: -200px; left: -100px;"
+                     width="436.35" height="436.35" viewBox="0 0 436.35 436.35" fill="none">
+                    <defs>
+                        <filter id="blur-soft" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="25" />
+                        </filter>
+                    </defs>
+                    <circle cx="218.175" cy="218.175" r="170" stroke="#F0F3FF" stroke-width="60" stroke-opacity="0.08" filter="url(#blur-soft)" />
+                    <circle cx="218.175" cy="218.175" r="210" stroke="#F0F3FF" stroke-width="2" stroke-opacity="0.1" />
+                    <circle cx="218.175" cy="218.175" r="110" stroke="#F0F3FF" stroke-width="1.5" stroke-opacity="0.15" />
+                </svg>
+
+                <!-- RIGHT MULTI RINGS -->
+                <svg class="absolute animate-spin-slow-reverse opacity-60 pointer-events-none"
+                     style="bottom: -200px; right: -100px;"
+                     width="436.35" height="436.35" viewBox="0 0 436.35 436.35" fill="none">
+                    <defs>
+                        <filter id="blur-soft2" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="25" />
+                        </filter>
+                    </defs>
+                    <circle cx="218.175" cy="218.175" r="170" stroke="#F0F3FF" stroke-width="60" stroke-opacity="0.08" filter="url(#blur-soft2)" />
+                    <circle cx="218.175" cy="218.175" r="210" stroke="#F0F3FF" stroke-width="2" stroke-opacity="0.1" />
+                    <circle cx="218.175" cy="218.175" r="110" stroke="#F0F3FF" stroke-width="1.5" stroke-opacity="0.15" />
+                </svg>
+
+                <!-- Static Background Texture Overlay -->
+                <div class="absolute inset-0 opacity-30 pointer-events-none" style="background-image: url('{% static 'accounts/images/background_greding.png' %}'); background-size: cover; background-position: center; mix-blend-mode: overlay;"></div>
+
+                <!-- Header Content -->
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <div class="inline-flex items-center justify-center bg-[#5046E5]/30 border border-[#A5B4FC]/30 backdrop-blur-sm px-4 py-1.5 rounded-full mb-4 shadow-sm">
+                        <i class="fa-solid fa-video text-[#A5B4FC] text-[12px] mr-2"></i>
+                        <span class="text-[#E0E7FF] text-[12px] font-bold uppercase tracking-wider">1-on-1 Guided Tour</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#F0F3FF] mb-4">Book a Personalized Demo</h2>
+                    <p class="text-[#cbd5e1] text-base sm:text-lg">See how CWS Inventory can streamline your operations. Fill out your details below and select a time that works for you.</p>
+                </div>
+            </div>
+
+            <!-- CARD BODY (Split Content) -->
+            <!-- FIX 4: Added rounded-b-[24px] for the bottom corners -->
+            <!-- We changed the overall wrapper to a form to allow buttons in both columns -->
+            <form method="POST" action="{% url 'book_demo' %}" id="demoForm" class="p-6 sm:p-8 lg:p-12 flex flex-col lg:flex-row gap-10 lg:gap-12 bg-white rounded-b-[24px] relative z-20">
+                {% csrf_token %}
+                
+                <!-- Section 1: Lead Capture Form -->
+                <div class="w-full lg:w-[40%] lg:shrink-0">
+                    <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-3">
+                        <div class="w-8 h-8 rounded-full bg-[#F0F3FF] text-[#5046E5] flex items-center justify-center font-bold text-[14px]">1</div>
+                        <h3 class="text-xl font-semibold text-[#0E0A4E]">Your Details</h3>
+                    </div>
+
+                    {% if messages %}
+                    <div class="mb-6 space-y-2">
+                        {% for message in messages %}
+                        <div class="p-4 rounded-xl text-sm flex items-start gap-3 {% if message.tags == 'error' %}bg-red-50 text-red-700 border border-red-100{% else %}bg-green-50 text-green-700 border border-green-100{% endif %}">
+                            <i class="fa-solid {% if message.tags == 'error' %}fa-circle-exclamation text-red-500{% else %}fa-circle-check text-green-500{% endif %} mt-0.5"></i>
+                            <p>{{ message }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div class="w-full">
+                        <div class="space-y-5">
+                            
+                            <!-- Full Name -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Full Name <span class="text-red-500">*</span></label>
+                                <input type="text" name="name" required placeholder="John Doe" class="w-full px-4 py-3 bg-[#F0F3FF] text-[15px] border border-[#E5E4FF] rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-[#5046E5]/30 focus:border-[#5046E5] transition-all placeholder-[#414751]/60">
+                            </div>
+                            
+                            <!-- Work Email -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Work Email <span class="text-red-500">*</span></label>
+                                <input type="email" name="email" required placeholder="john@company.com" class="w-full px-4 py-3 bg-[#F0F3FF] text-[15px] border border-[#E5E4FF] rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-[#5046E5]/30 focus:border-[#5046E5] transition-all placeholder-[#414751]/60">
+                            </div>
+
+                            <!-- Phone Number -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Phone Number <span class="text-red-500">*</span></label>
+                                <input type="text" name="phone" required placeholder="+91 90000 00000" class="w-full px-4 py-3 bg-[#F0F3FF] text-[15px] border border-[#E5E4FF] rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-[#5046E5]/30 focus:border-[#5046E5] transition-all placeholder-[#414751]/60">
+                            </div>
+
+                            <!-- Company Name -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Company Name <span class="text-red-500">*</span></label>
+                                <input type="text" name="company_name" required placeholder="Company Ltd" class="w-full px-4 py-3 bg-[#F0F3FF] text-[15px] border border-[#E5E4FF] rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-[#5046E5]/30 focus:border-[#5046E5] transition-all placeholder-[#414751]/60">
+                            </div>
+                            
+                            <!-- Business Type + Company Size -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-[11px] font-bold text-[#6B7280] uppercase tracking-widest mb-1.5">
+                                        Business Type
+                                    </label>
+                                    <select name="business_type"
+                                            class="w-full px-4 py-3 bg-[#F9FAFB] border border-[#E5E7EB] rounded-xl text-sm text-[#374151] focus:outline-none focus:border-[#5046E5] focus:ring-2 focus:ring-[#5046E5]/10 transition">
+                                        <option value="">Select type...</option>
+                                        <option value="retail"    {% if form_data.business_type == 'retail' %}selected{% endif %}>Retail</option>
+                                        <option value="pharma"    {% if form_data.business_type == 'pharma' %}selected{% endif %}>Pharma</option>
+                                        <option value="warehouse" {% if form_data.business_type == 'warehouse' %}selected{% endif %}>Warehouse</option>
+                                        <option value="other"     {% if form_data.business_type == 'other' %}selected{% endif %}>Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-bold text-[#6B7280] uppercase tracking-widest mb-1.5">
+                                        Company Size
+                                    </label>
+                                    <select name="company_size"
+                                            class="w-full px-4 py-3 bg-[#F9FAFB] border border-[#E5E7EB] rounded-xl text-sm text-[#374151] focus:outline-none focus:border-[#5046E5] focus:ring-2 focus:ring-[#5046E5]/10 transition">
+                                        <option value="">Select size...</option>
+                                        <option value="1-10"   {% if form_data.company_size == '1-10' %}selected{% endif %}>1–10 employees</option>
+                                        <option value="11-50"  {% if form_data.company_size == '11-50' %}selected{% endif %}>11–50 employees</option>
+                                        <option value="51-200" {% if form_data.company_size == '51-200' %}selected{% endif %}>51–200 employees</option>
+                                        <option value="200+"   {% if form_data.company_size == '200+' %}selected{% endif %}>200+ employees</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            
+                            <!-- Message -->
+                            <div>
+                                <label class="block text-[13px] font-semibold text-[#0E0A4E] mb-1.5">Message (Optional)</label>
+                                <textarea name="message" rows="3" placeholder="Tell us about specific challenges you want to address..." class="w-full px-4 py-3 bg-[#F0F3FF] text-[15px] border border-[#E5E4FF] rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-[#5046E5]/30 focus:border-[#5046E5] transition-all placeholder-[#414751]/60 resize-none"></textarea>
+                            </div>
+                            
+                            <!-- CAPTCHA -->
+                            <div class="captcha-container">
+                                <div class="flex items-center gap-4 mb-1.5">
+                                    <label class="block text-[13px] font-semibold text-[#0E0A4E] uppercase tracking-wide">CAPTCHA <span class="text-red-500">*</span></label>
+                                    <button type="button" class="text-[12px] text-[#A5B4FC] hover:text-[#5046E5] font-medium transition-colors" onclick="clearCaptcha()">Clear</button>
+                                </div>
+                                <div class="relative">
+                                    <input type="text" id="captchaInput" name="captcha" required placeholder="Type below image text" class="w-full px-4 py-3 bg-[#F0F3FF] text-[15px] border border-[#E5E4FF] rounded-xl outline-none focus:bg-white focus:ring-2 focus:ring-[#5046E5]/30 focus:border-[#5046E5] transition-all placeholder-[#414751]/60" autocomplete="off">
+                                    <span id="captchaError" class="validation-error text-red-500 text-[12px] mt-1.5 hidden font-medium block">Invalid captcha.</span>
+                                </div>
+                                <div class="flex items-center gap-3 mt-3">
+                                    <div class="border border-gray-200 rounded-lg bg-white inline-block overflow-hidden shadow-sm">
+                                        <canvas id="captchaCanvas" width="150" height="50" class="block cursor-pointer" onclick="generateCaptcha()"></canvas>
+                                    </div>
+                                    <button type="button" class="text-gray-400 hover:text-[#5046E5] transition-colors p-2" onclick="generateCaptcha()" title="Reload CAPTCHA">
+                                        <i class="fa-solid fa-rotate-right text-[18px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Desktop Button: Visible on Large Screens Only -->
+                            <button type="submit" disabled class="submitBtn hidden lg:flex w-full bg-gradient-to-r from-[#5046E5] to-[#4338ca] hover:from-[#4338ca] hover:to-[#3730a3] text-white font-semibold py-3.5 rounded-xl transition-all shadow-[0px_4px_25px_rgba(80,70,229,0.31)] hover:shadow-[0px_6px_35px_rgba(80,70,229,0.4)] opacity-50 cursor-not-allowed items-center justify-center gap-2 text-[16px] transform hover:-translate-y-0.5 mt-2">
+                                <span>Submit Details</span>
+                                <i class="fa-solid fa-arrow-right text-[14px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Calendar Integration -->
+                <div class="w-full lg:flex-1 flex flex-col">
+                    <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-3">
+                        <div class="w-8 h-8 rounded-full bg-[#F0F3FF] text-[#5046E5] flex items-center justify-center font-bold text-[14px]">2</div>
+                        <h3 class="text-xl font-semibold text-[#0E0A4E]">Select a Time</h3>
+                    </div>
+                    
+                    <!-- FIX 6: Added overflow-hidden to widget wrapper to contain iframe bounds securely -->
+                    <div class="bg-white rounded-[16px] border border-gray-200 shadow-sm w-full relative z-10 flex-grow overflow-hidden" id="calendarContainer">
+                        
+                        <!-- Overlay -->
+                        <div id="calendarOverlay" class="absolute inset-0 z-50 bg-white/80 backdrop-blur-[2px] flex flex-col items-center justify-center transition-opacity duration-300">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center max-w-sm mx-4">
+                                <div class="w-16 h-16 bg-[#F0F3FF] text-[#5046E5] rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fa-solid fa-lock text-2xl"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-[#0E0A4E] mb-2">Unlock Calendar</h4>
+                                <p class="text-sm text-gray-500">Please fill out your valid details correctly on the left to choose a meeting time.</p>
+                            </div>
+                        </div>
+
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget w-full" data-url="https://calendly.com/jayeshbhoge24" style="min-width:320px;height:750px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+
+                    <!-- Mobile Button: Visible on Mobile Only (Below Calendar) -->
+                    <button type="submit" disabled class="submitBtn flex lg:hidden w-full bg-gradient-to-r from-[#5046E5] to-[#4338ca] hover:from-[#4338ca] hover:to-[#3730a3] text-white font-semibold py-3.5 rounded-xl transition-all shadow-[0px_4px_25px_rgba(80,70,229,0.31)] hover:shadow-[0px_6px_35px_rgba(80,70,229,0.4)] opacity-50 cursor-not-allowed items-center justify-center gap-2 text-[16px] transform hover:-translate-y-0.5 mt-6">
+                        <span>Submit Details</span>
+                        <i class="fa-solid fa-arrow-right text-[14px]"></i>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+     <script>
+        // 1. Configuration & Selectors
+        const form = document.getElementById('demoForm'); 
+        const submitBtns = document.querySelectorAll('.submitBtn'); // Handles both desktop and mobile buttons
+
+        let isMeetingScheduled = false;
+        
+        // CAPTCHA Logic
+        let currentCaptcha = '';
+
+        window.generateCaptcha = function(keepError = false) {
+            const canvas = document.getElementById('captchaCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Background
+            ctx.fillStyle = '#f8fafc';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Generate random string (alphanumeric)
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
+            let captchaStr = '';
+            for(let i = 0; i < 6; i++) {
+                captchaStr += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            currentCaptcha = captchaStr;
+            
+            // Draw noise lines
+            for(let i = 0; i < 5; i++) {
+                ctx.beginPath();
+                ctx.moveTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.lineTo(Math.random() * canvas.width, Math.random() * canvas.height);
+                ctx.strokeStyle = `rgba(${Math.random()*150},${Math.random()*150},${Math.random()*150},0.5)`;
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+            }
+            
+            // Draw text
+            ctx.font = 'bold 28px Inter, sans-serif';
+            ctx.textBaseline = 'middle';
+            
+            for(let i = 0; i < captchaStr.length; i++) {
+                ctx.save();
+                const x = 20 + (i * 20);
+                const y = 25;
+                
+                const angle = (Math.random() - 0.5) * 0.5;
+                ctx.translate(x, y);
+                ctx.rotate(angle);
+                
+                ctx.fillStyle = `rgb(${Math.random()*100},${Math.random()*100},${Math.random()*200})`;
+                ctx.fillText(captchaStr[i], 0, 0);
+                ctx.restore();
+            }
+            
+            // Draw noise dots
+            for(let i = 0; i < 30; i++) {
+                ctx.beginPath();
+                ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 2, 0, 2 * Math.PI);
+                ctx.fillStyle = `rgba(${Math.random()*150},${Math.random()*150},${Math.random()*150},0.6)`;
+                ctx.fill();
+            }
+            
+            // Reset input and error
+            const input = document.getElementById('captchaInput');
+            if (input) input.value = '';
+            
+            if (!keepError) {
+                const err = document.getElementById('captchaError');
+                if (err) err.classList.add('hidden');
+                if (input) {
+                    input.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                    input.classList.add('border-[#E5E4FF]', 'focus:ring-[#5046E5]/30');
+                }
+            }
+        };
+
+        window.clearCaptcha = function() {
+            const input = document.getElementById('captchaInput');
+            if (input) {
+                input.value = '';
+                input.focus();
+                input.dispatchEvent(new Event('input')); // Trigger form validation
+            }
+        };
+
+        // 2. Initial Button Style (Disabled/Gray)
+        function disableButton() {
+            submitBtns.forEach(btn => {
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+                btn.innerHTML = '<span>Complete All Steps to Submit</span> <i class="fa-solid fa-lock text-[14px]"></i>';
+                btn.removeAttribute('style'); // Clear inline styles
+            });
+        }
+
+        // 3. Enable Button Style (Active/Blue)
+        function enableButton() {
+            submitBtns.forEach(btn => {
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                btn.innerHTML = '<span>Submit Details</span> <i class="fa-solid fa-arrow-right text-[14px]"></i>';
+                btn.removeAttribute('style'); // Clear inline styles
+            });
+        }
+
+        const validators = {
+            name: { test: (val) => /^[A-Za-z][A-Za-z\s]*$/.test(val), message: 'Name must start with a letter and contain only alphabets/spaces.', maxLength: 30 },
+            email: { test: (val) => /^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(val), message: 'Please enter a valid email address.' },
+            phone: { test: (val) => /^\d{10}$/.test(val), message: 'Phone number must be exactly 10 digits.', maxLength: 10 },
+            company_name: { test: (val) => /^[^\s]/.test(val), message: 'Cannot start with a space.', maxLength: 50 },
+            message: { test: (val) => /^[^\s]/.test(val), message: 'Cannot start with a space.', maxLength: 500 }
+        };
+
+        let backendValid = { email: true, phone: true };
+
+        async function checkBackendDuplicate(input) {
+            const val = input.value.trim();
+            if (!val || input.classList.contains('border-red-500')) return;
+
+            const param = input.name;
+            try {
+                const res = await fetch(`/api/check-demo-duplicate/?${param}=${encodeURIComponent(val)}`);
+                const data = await res.json();
+                
+                let errorSpan = input.nextElementSibling;
+                if (!errorSpan || !errorSpan.classList.contains('validation-error')) {
+                    errorSpan = document.createElement('span');
+                    errorSpan.classList.add('validation-error', 'text-red-500', 'text-[12px]', 'mt-1.5', 'block', 'font-medium');
+                    input.parentNode.insertBefore(errorSpan, input.nextSibling);
+                }
+
+                if (data.duplicate === param) {
+                    backendValid[param] = false;
+                    errorSpan.textContent = data.message;
+                    input.classList.add('border-red-500', 'focus:ring-red-500/20');
+                    input.classList.remove('border-[#E5E4FF]', 'focus:ring-[#5046E5]/30');
+                } else {
+                    backendValid[param] = true;
+                    if (validators[param] && validators[param].test(val)) {
+                        errorSpan.textContent = '';
+                        input.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                        input.classList.add('border-[#E5E4FF]', 'focus:ring-[#5046E5]/30');
+                    }
+                }
+                validateFormState();
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        function validateInput(input) {
+            const name = input.name;
+            if (!validators[name]) return true;
+
+            const val = input.value;
+            const validator = validators[name];
+
+            let isValid = val === '' ? true : validator.test(val);
+            
+            let errorSpan = input.nextElementSibling;
+            if (!errorSpan || !errorSpan.classList.contains('validation-error')) {
+                errorSpan = document.createElement('span');
+                errorSpan.classList.add('validation-error', 'text-red-500', 'text-[12px]', 'mt-1.5', 'block', 'font-medium');
+                input.parentNode.insertBefore(errorSpan, input.nextSibling);
+            }
+
+            if (!isValid) {
+                errorSpan.textContent = validator.message;
+                input.classList.add('border-red-500', 'focus:ring-red-500/20');
+                input.classList.remove('border-[#E5E4FF]', 'focus:ring-[#5046E5]/30');
+                return false;
+            } else {
+                errorSpan.textContent = '';
+                input.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                input.classList.add('border-[#E5E4FF]', 'focus:ring-[#5046E5]/30');
+                return true;
+            }
+        }
+
+        // 4. Function to check if everything is ready
+        function validateFormState() {
+            let allFieldsFilled = true;
+            let inputsValid = true;
+            
+            // Re-fetch required inputs to catch dynamically added ones
+            const requiredInputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+
+            requiredInputs.forEach(input => {
+                if (!input.value.trim()) {
+                    allFieldsFilled = false;
+                } else if (validators[input.name] && !validators[input.name].test(input.value)) {
+                    inputsValid = false;
+                }
+            });
+
+            const isFormValid = allFieldsFilled && inputsValid && backendValid.email && backendValid.phone;
+
+            if (isFormValid) {
+                const overlay = document.getElementById('calendarOverlay');
+                if (overlay) overlay.classList.add('opacity-0', 'pointer-events-none');
+                
+                if (isMeetingScheduled) {
+                    enableButton();
+                } else {
+                    disableButton();
+                }
+            } else {
+                const overlay = document.getElementById('calendarOverlay');
+                if (overlay) overlay.classList.remove('opacity-0', 'pointer-events-none');
+                
+                disableButton();
+            }
+        }
+        
+        // Add event listeners for validation
+        form.querySelectorAll('input, textarea').forEach(input => {
+            if (validators[input.name] && validators[input.name].maxLength) {
+                input.setAttribute('maxlength', validators[input.name].maxLength);
+            }
+            input.addEventListener('keydown', function(e) {
+                if (e.key === ' ' && this.selectionStart === 0) {
+                    e.preventDefault();
+                }
+            });
+            input.addEventListener('blur', function() {
+                validateInput(this);
+                if (this.name === 'email' || this.name === 'phone') {
+                    checkBackendDuplicate(this);
+                } else {
+                    validateFormState();
+                }
+            });
+            input.addEventListener('input', function(e) {
+                if (this.value.startsWith(' ')) {
+                    this.value = this.value.trimStart();
+                }
+                
+                if (this.name === 'email') backendValid.email = true;
+                if (this.name === 'phone') backendValid.phone = true;
+                
+                validateInput(this);
+                
+                // Clear captcha error if they start typing again
+                if (e.target && e.target.id === 'captchaInput') {
+                    const captchaError = document.getElementById('captchaError');
+                    if (captchaError) captchaError.classList.add('hidden');
+                    e.target.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                    e.target.classList.add('border-[#E5E4FF]', 'focus:ring-[#5046E5]/30');
+                }
+            });
+        });
+
+        // 5. Listen for Calendly Booking
+        window.addEventListener('message', (e) => {
+            if (e.data.event && e.data.event === 'calendly.event_scheduled') {
+                isMeetingScheduled = true;
+                validateFormState(); // Check if fields are already filled
+                console.log("Meeting Booked!");
+            }
+        });
+
+        // 6. Listen for Typing/Input Changes
+        form.addEventListener('input', (e) => {
+            validateFormState();
+        });
+
+        // 7. Final Form Submission Safety
+        form.addEventListener('submit', function(e) {
+            let formIsValid = true;
+            const requiredInputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            requiredInputs.forEach(input => {
+                if (input.value !== '' && validators[input.name] && !validateInput(input)) {
+                    formIsValid = false;
+                }
+            });
+            
+            if (!formIsValid) {
+                e.preventDefault();
+                return;
+            }
+
+            if (!isMeetingScheduled) {
+                e.preventDefault();
+                alert("Please schedule your meeting on the calendar first!");
+                return;
+            }
+            
+            // CAPTCHA Validation on Submit
+            const captchaInput = document.getElementById('captchaInput');
+            const captchaError = document.getElementById('captchaError');
+            if (captchaInput && captchaInput.value !== currentCaptcha) {
+                e.preventDefault();
+                captchaError.classList.remove('hidden');
+                captchaInput.classList.add('border-red-500', 'focus:ring-red-500/20');
+                captchaInput.classList.remove('border-[#E5E4FF]', 'focus:ring-[#5046E5]/30');
+                generateCaptcha(true); // Reload captcha on wrong attempt but keep error
+                validateFormState(); // Re-validate
+            } else if (captchaInput) {
+                captchaError.classList.add('hidden');
+                captchaInput.classList.remove('border-red-500', 'focus:ring-red-500/20');
+                captchaInput.classList.add('border-[#E5E4FF]', 'focus:ring-[#5046E5]/30');
+            }
+        });
+
+        // Initialize state on page load
+        generateCaptcha();
+        disableButton();
+    </script>
+
+
+</body>
+</html>

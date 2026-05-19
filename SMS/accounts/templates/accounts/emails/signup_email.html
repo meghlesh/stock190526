@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to CWS Inventory</title>
+    <style>
+        /* Base styles */
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; color: #1f2937; }
+        .wrapper { width: 100%; table-layout: fixed; background-color: #f3f4f6; padding: 40px 0; }
+        .main { background-color: #ffffff; margin: 0 auto; width: 100%; max-width: 600px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); }
+        
+        /* Header */
+        .header { background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); padding: 40px 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+        .header p { color: #e0e7ff; margin: 10px 0 0 0; font-size: 16px; }
+        
+        /* Content */
+        .content { padding: 40px 30px; background-color: #ffffff; }
+        .content h2 { color: #111827; font-size: 22px; margin-top: 0; }
+        .content p { font-size: 16px; line-height: 1.6; color: #4b5563; margin-bottom: 24px; }
+        
+        /* Button */
+        .btn-wrapper { text-align: center; margin: 35px 0; }
+        .btn { display: inline-block; background-color: #4f46e5; color: #ffffff !important; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; transition: background-color 0.3s; box-shadow: 0 4px 6px rgba(79, 70, 229, 0.25); }
+        .btn:hover { background-color: #4338ca; }
+        
+        /* Footer */
+        .footer { background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb; }
+        .footer p { margin: 0; font-size: 13px; color: #6b7280; line-height: 1.5; }
+        .footer-links { margin-top: 15px; }
+        .footer-links a { color: #4f46e5; text-decoration: none; margin: 0 10px; font-size: 13px; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <!-- Header section -->
+            <div class="header">
+                <img src="cid:logo" alt="CWS Inventory Logo" style="height: 50px; width: auto; margin-bottom: 10px;">
+                <p>Intelligent Operations Management</p>
+            </div>
+            
+            <!-- Body section -->
+            <div class="content">
+                <h2>Welcome aboard, {{ name }}! 🎉</h2>
+                <p>Thank you for starting your <strong>7-Day Free Trial</strong> with CWS Inventory. We're thrilled to have you on board and can't wait to see how our platform transforms your business operations.</p>
+                <p>To ensure your account is secure and ready to go, please verify your email address by clicking the button below:</p>
+                
+                <div class="btn-wrapper">
+                    <!-- Inline CSS for Button -->
+                    <a href="{{ verification_link }}" class="btn" style="display: inline-block; background-color: #4f46e5; color: #ffffff !important; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 6px rgba(79, 70, 229, 0.25);">Verify Email & Get Started</a>
+                </div>
+                
+                <p>If the button doesn't work, you can copy and paste this link into your browser:<br>
+                <a href="{{ verification_link }}" style="color: #4f46e5; word-break: break-all; font-size: 14px;">{{ verification_link }}</a></p>
+                
+                <p>We're here to support you at every step. If you have any questions, simply reply to this email.</p>
+                <p style="margin-bottom: 0;">Best,<br><strong>The CWS Success Team</strong></p>
+            </div>
+            
+            <!-- Footer section -->
+            <div class="footer">
+                <div class="footer-links">
+                    <a href="#">Help Center</a> | <a href="#">Tutorials</a> | <a href="#">Contact Support</a>
+                </div>
+                <p style="margin-top: 15px;">&copy; 2026 CWS Enterprise Solutions. All rights reserved.</p>
+                <p>You received this email because you signed up for a trial account at CWS Inventory.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

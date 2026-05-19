@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Free Trial is Expiring</title>
+    <style>
+        /* Base styles */
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; color: #1f2937; }
+        .wrapper { width: 100%; table-layout: fixed; background-color: #f3f4f6; padding: 40px 0; }
+        .main { background-color: #ffffff; margin: 0 auto; width: 100%; max-width: 600px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); }
+        
+        /* Header */
+        .header { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 40px 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+        .header p { color: #fef3c7; margin: 10px 0 0 0; font-size: 16px; }
+        
+        /* Content */
+        .content { padding: 40px 30px; background-color: #ffffff; }
+        .content h2 { color: #111827; font-size: 22px; margin-top: 0; }
+        .content p { font-size: 16px; line-height: 1.6; color: #4b5563; margin-bottom: 24px; }
+        
+        /* Button */
+        .btn-wrapper { text-align: center; margin: 35px 0; }
+        
+        /* Footer */
+        .footer { background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb; }
+        .footer p { margin: 0; font-size: 13px; color: #6b7280; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <div class="header">
+                <img src="cid:logo" alt="CWS Inventory Logo" style="height: 50px; width: auto; margin-bottom: 10px;">
+                <p>Action Required</p>
+            </div>
+            
+            <div class="content">
+                <h2>Hi {{ name }},</h2>
+                <p>We hope you are enjoying your free trial of CWS Inventory! This is a quick reminder that your 7-day free trial will expire in exactly <strong>3 days</strong>.</p>
+                <p>To ensure uninterrupted access to your dashboard, products, and sales orders, please upgrade your plan before the trial ends.</p>
+                
+                <div class="btn-wrapper">
+                    <!-- Inline CSS for Button -->
+                    <a href="{{ upgrade_link }}" style="display: inline-block; background-color: #f59e0b; color: #ffffff !important; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 6px rgba(245, 158, 11, 0.25);">Upgrade My Plan Now</a>
+                </div>
+                
+                <p>If you choose not to upgrade, your account access will be locked at the end of the trial, and your data will be securely deleted after a 30-day grace period.</p>
+                <p style="margin-bottom: 0;">If you have any questions, just reply to this email!</p>
+                <p style="margin-bottom: 0;"><br>Best,<br><strong>The CWS Success Team</strong></p>
+            </div>
+            
+            <div class="footer">
+                <p>&copy; 2026 CWS Enterprise Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

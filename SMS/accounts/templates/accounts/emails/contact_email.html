@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry Received</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; color: #1f2937; }
+        .wrapper { width: 100%; table-layout: fixed; background-color: #f3f4f6; padding: 40px 0; }
+        .main { background-color: #ffffff; margin: 0 auto; width: 100%; max-width: 600px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); }
+        .header { background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); padding: 40px 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+        .header p { color: #e0e7ff; margin: 10px 0 0 0; font-size: 16px; }
+        .content { padding: 40px 30px; background-color: #ffffff; }
+        .content h2 { color: #111827; font-size: 22px; margin-top: 0; }
+        .content p { font-size: 16px; line-height: 1.6; color: #4b5563; margin-bottom: 24px; }
+        .details-card { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 25px; border-left: 4px solid #4f46e5; }
+        .details-card h3 { margin-top: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 10px; }
+        .details-card p { margin: 5px 0; color: #1e293b; font-size: 15px; }
+        .footer { background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb; }
+        .footer p { margin: 0; font-size: 13px; color: #6b7280; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <div class="header">
+                <img src="cid:logo" alt="CWS Inventory Logo" style="height: 50px; width: auto; margin-bottom: 10px;">
+                <p>Inquiry Successfully Received</p>
+            </div>
+            
+            <div class="content">
+                <h2>Hello {{ name }},</h2>
+                <p>Thank you for reaching out to the CWS Inventory Enterprise Team. We have successfully received your inquiry and our team is currently reviewing your details.</p>
+                
+                <div class="details-card">
+                    <h3>Inquiry Details</h3>
+                    <p><strong>Company:</strong> {{ company_name }}</p>
+                    <p><strong>Industry:</strong> {{ industry }}</p>
+                </div>
+                
+                <p>A senior enterprise sales representative has been assigned to your request. They will be in touch with you within the next 24 hours to discuss a customized solution and provide you with a tailored proposal.</p>
+                <p>If you have any immediate questions or need to add anything to your inquiry, simply reply to this email.</p>
+                <p style="margin-bottom: 0;">Warm regards,<br><strong>The CWS Enterprise Team</strong></p>
+            </div>
+            
+            <div class="footer">
+                <p>&copy; 2026 CWS Enterprise Solutions. All rights reserved.</p>
+                <p>You received this email because you submitted a contact request on our website.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

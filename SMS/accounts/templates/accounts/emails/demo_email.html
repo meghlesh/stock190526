@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Request Confirmed</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; color: #1f2937; }
+        .wrapper { width: 100%; table-layout: fixed; background-color: #f3f4f6; padding: 40px 0; }
+        .main { background-color: #ffffff; margin: 0 auto; width: 100%; max-width: 600px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); }
+        .header { background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%); padding: 40px 30px; text-align: center; }
+        .header h1 { color: #ffffff; margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+        .header p { color: #e0e7ff; margin: 10px 0 0 0; font-size: 16px; }
+        .content { padding: 40px 30px; background-color: #ffffff; }
+        .content h2 { color: #111827; font-size: 22px; margin-top: 0; }
+        .content p { font-size: 16px; line-height: 1.6; color: #4b5563; margin-bottom: 24px; }
+        .details-card { background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 25px; border-left: 4px solid #4f46e5; }
+        .details-card h3 { margin-top: 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 10px; }
+        .details-card p { margin: 5px 0; color: #1e293b; font-size: 15px; }
+        .footer { background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb; }
+        .footer p { margin: 0; font-size: 13px; color: #6b7280; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <div class="header">
+                <img src="cid:logo" alt="CWS Inventory Logo" style="height: 50px; width: auto; margin-bottom: 10px;">
+                <p>Demo Request Received</p>
+            </div>
+            
+            <div class="content">
+                <h2>Hi {{ name }},</h2>
+                <p>Thank you for booking a demo! We've successfully received your request and are excited to show you how CWS Inventory can help streamline your business operations.</p>
+                
+                <div class="details-card">
+                    <h3>Your Details</h3>
+                    <p><strong>Company:</strong> {{ company_name }}</p>
+                    <p><strong>Business Type:</strong> {{ business_type }}</p>
+                </div>
+                
+                <p>If you selected a time on our calendar, a formal invitation with meeting links will be sent to your inbox shortly. If you haven't picked a time yet, one of our product specialists will reach out to you within 24 hours to get you scheduled.</p>
+                <p>In the meantime, feel free to check out our website to learn more about our features.</p>
+                <p style="margin-bottom: 0;">Best regards,<br><strong>The CWS Sales Team</strong></p>
+            </div>
+            
+            <div class="footer">
+                <p>&copy; 2026 CWS Enterprise Solutions. All rights reserved.</p>
+                <p>You are receiving this because you submitted a demo request at CWS Inventory.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,357 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund & Cancellation Policy | CWS Inventory</title>
+    <link rel="icon" type="image/png" href="{% static 'accounts/images/Tab Logo.png' %}">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#5046e5',
+                            primary_hover: '#4338ca',
+                            primary_light: '#e0e7ff',
+                            secondary: '#343090',
+                            dark_bg: '#0a0a32',
+                            card_bg: '#1b1b4b',
+                            navy: '#1e1b4b',
+                            text_dark: '#0f172a',
+                            text_body: '#475569',
+                            bg_light: '#f4f6fa',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #414751; background-color: #ffffff; }
+        h1, h2, h3, h4, h5, h6 { color: #0E0A4E; }
+    </style>
+
+    <style>
+        [data-custom-class='body'], [data-custom-class='body'] * {
+            background: transparent !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+        [data-custom-class='title'], [data-custom-class='title'] * {
+            font-size: 32px !important;
+            color: #0E0A4E !important;
+            font-weight: 700 !important;
+            margin-bottom: 16px !important;
+            display: inline-block;
+        }
+        [data-custom-class='heading_1'], [data-custom-class='heading_1'] * {
+            font-size: 24px !important;
+            color: #0E0A4E !important;
+            font-weight: 600 !important;
+            margin-top: 32px !important;
+            margin-bottom: 16px !important;
+        }
+        [data-custom-class='body_text'], [data-custom-class='body_text'] * {
+            color: #4B5563 !important;
+            font-size: 16px !important;
+            line-height: 1.8 !important;
+        }
+        [data-custom-class='link'], [data-custom-class='link'] * {
+            color: #5046E5 !important;
+            font-size: 16px !important;
+            word-break: break-word !important;
+            font-weight: 500 !important;
+            text-decoration: underline !important;
+        }
+        .privacy-content ul {
+            list-style-type: disc !important;
+            padding-left: 2rem !important;
+            margin-bottom: 1.5rem !important;
+        }
+        .privacy-content li {
+            margin-bottom: 0.5rem !important;
+            color: #4B5563 !important;
+            font-size: 16px !important;
+            line-height: 1.8 !important;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+<!-- Top Bar -->
+<div class="bg-gradient-to-r from-[#5046E5] to-[#092A49] text-white">
+    <div class="max-w-[1440px] mx-auto px-2 sm:px-6 lg:px-8 min-h-[38px] flex items-center justify-between flex-nowrap overflow-hidden">
+        <!-- Left -->
+        <div class="flex items-center flex-nowrap min-w-0">
+            <!-- Timing -->
+            <div class="flex items-center px-1 sm:px-4 border-l border-white/15 whitespace-nowrap">
+                <i class="fa-regular fa-clock text-[11px] sm:text-[13px] mr-1 sm:mr-2 shrink-0"></i>
+                <span class="text-[9px] xs:text-[10px] sm:text-[13px] font-medium whitespace-nowrap">9:00AM - 6:00PM</span>
+                <span class="mx-1 sm:mx-2 h-3 sm:h-4 w-px bg-white/30 inline-block"></span>
+                <span class="text-[9px] xs:text-[10px] sm:text-[12px] text-white/80 whitespace-nowrap">Mon - Sat</span>
+            </div>
+            <!-- Phone -->
+            <div class="flex items-center px-[2px] sm:px-4 border-l sm:border-r border-white/15 whitespace-nowrap">
+                <i class="fa-solid fa-phone text-[9px] sm:text-[12px] mr-[2px] sm:mr-2 shrink-0"></i>
+                <span class="text-[9px] xs:text-[10px] sm:text-[13px] font-medium tracking-tight whitespace-nowrap">
+                    <a href="tel:+919326246981">+91 93262 46981</a>
+                </span>
+            </div>
+        </div>
+        <!-- Social Icons -->
+        <div class="flex items-center shrink-0 ml-1 sm:ml-auto">
+            <a href="https://www.linkedin.com/company/108927136/admin/dashboard/"
+               target="_blank" class="w-[28px] sm:w-[35px] h-[30px] sm:h-[35px] flex items-center justify-center border-l border-white/15 hover:bg-white/10 transition-colors">
+                <i class="fa-brands fa-linkedin-in text-[12px] sm:text-[14px]"></i>
+            </a>
+            <a href="https://www.instagram.com/creativewebsolution99?igsh=OWlxcGlvNG1tNG1s"  target="_blank" class="w-[28px] sm:w-[35px] h-[30px] sm:h-[35px] flex items-center justify-center border-l border-r border-white/15 hover:bg-white/10 transition-colors">
+                <i class="fa-brands fa-instagram text-[12px] sm:text-[14px]"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="bg-white sticky top-0 z-50 w-full shadow-sm" id="navbar">
+    <div class="max-w-[1440px] mx-auto py-4 lg:py-[24px] px-4 lg:pl-[53px] lg:pr-[78px]">
+        <div class="flex justify-between items-center h-auto sm:min-h-[40px] h-auto lg:px-[46px]">
+            <a href="{% url 'index' %}" class="flex-shrink-0 flex items-center hover:opacity-90 transition group">
+                <img src="{% static 'accounts/images/logo.png' %}" alt="CWS Inventory Logo" class="h-[56px] sm:h-[72px] lg:h-[90px] w-auto object-contain -my-3 sm:-my-5 lg:-my-[20px] group-hover:scale-105 transition-transform duration-300">
+            </a>
+            <div class="flex items-center gap-3 sm:gap-[16px]">
+                <!-- Back Button -->
+                <a href="{% url 'index' %}" class="text-[#414751] hover:text-[#5046E5] text-[13px] sm:text-[14px] font-medium transition flex items-center gap-2 bg-[#F0F3FF] hover:bg-[#E0E7FF] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg">
+                    <i class="fa-solid fa-house text-[12px]"></i>
+                    <span class="hidden sm:inline">Back to Home</span>
+                    <span class="sm:hidden">Back</span>
+                </a>
+                <div class="relative group flex items-center h-[40px] hidden sm:flex">
+                    <button class="text-[#4b5563] hover:text-brand-primary text-[13px] sm:text-[14px] font-medium transition flex items-center justify-center">
+                        Login
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-48 sm:w-52 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="p-2 space-y-1">
+                            <a href="{% url 'admin_login' %}" class="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-brand-primary_light hover:text-brand-primary rounded-lg transition-colors font-medium">
+                                <div class="w-8 h-8 rounded bg-brand-primary/10 flex items-center justify-center mr-3 text-brand-primary shrink-0"><i class="fa-solid fa-user-shield"></i></div>
+                                Admin Portal
+                            </a>
+                            <a href="{% url 'company_login' %}" class="flex items-center px-3 py-2 text-sm text-gray-700 hover:bg-brand-primary_light hover:text-brand-primary rounded-lg transition-colors font-medium">
+                                <div class="w-8 h-8 rounded bg-brand-primary/10 flex items-center justify-center mr-3 text-brand-primary shrink-0"><i class="fa-solid fa-store"></i></div>
+                                Business Portal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/#pricing" class="bg-[#5046E5] hover:bg-[#4338ca] text-white flex items-center justify-center px-4 sm:px-[20px] py-2 sm:py-[10px] h-[36px] sm:min-h-[40px] h-auto rounded-[8px] text-[13px] sm:text-[14px] font-medium transition-colors whitespace-nowrap hidden sm:flex">Get Started</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Page Title Hero -->
+<section class="bg-[#F0F3FF] py-16 lg:py-20 border-b border-gray-200">
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[100px] text-center">
+        <h1 class="text-[36px] lg:text-[48px] font-bold text-[#0E0A4E] mb-4">Refund & Cancellation Policy</h1>
+        <p class="text-[#414751] text-[16px] lg:text-[18px]">Effective Date: May 2026</p>
+    </div>
+</section>
+
+<!-- Main Refund Policy Content -->
+<section class="py-16 lg:py-24 bg-[#F8F9FC]">
+    <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-10 lg:p-14 privacy-content overflow-hidden">
+            <div data-custom-class="body">
+                <div><strong><span style="font-size: 26px;"><span data-custom-class="title"><h1>REFUND & CANCELLATION POLICY</h1></span></span></strong></div>
+                <div style="line-height: 1.5;"><br></div>
+                <div style="line-height: 1.5;"><span style="color: rgb(127, 127, 127);"><span style="color: rgb(89, 89, 89); font-size: 15px;"><span data-custom-class="body_text">At CWS Inventory, we are committed to providing a transparent and reliable service experience to our customers. This Refund & Cancellation Policy explains the terms related to free trial access, plan purchases, cancellations, refunds, and payment processing.</span></span></span></div>
+                <div style="line-height: 1.5;"><br></div>
+
+                <div style="line-height: 1.5;"><strong><span style="font-size: 19px;"><span data-custom-class="heading_1"><h2>Free Trial Access</h2></span></span></strong></div>
+                <ul>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">Users are provided access to the Business Portal during the free trial period for evaluation and testing purposes.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">The free trial is offered without any charges.</span></li>
+                </ul>
+                <div style="line-height: 1.5;"><br></div>
+
+                <div style="line-height: 1.5;"><strong><span style="font-size: 19px;"><span data-custom-class="heading_1"><h2>Subscription & Access Policy</h2></span></span></strong></div>
+                <ul>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">CWS Inventory does not provide monthly subscription plans.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">After the free trial period ends, access to the Business Portal will be automatically disabled.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">To continue using the Business Portal, customers must purchase a valid plan through the platform.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">Access to services will be activated only after successful payment confirmation.</span></li>
+                </ul>
+                <div style="line-height: 1.5;"><br></div>
+
+                <div style="line-height: 1.5;"><strong><span style="font-size: 19px;"><span data-custom-class="heading_1"><h2>Payment Policy</h2></span></span></strong></div>
+                <ul>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">All payments for plan purchases are processed securely through Razorpay payment gateway.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">Customers are responsible for ensuring that the payment details provided are accurate and valid.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">Upon successful payment, the purchased plan and corresponding access will be activated as per the selected plan terms.</span></li>
+                </ul>
+                <div style="line-height: 1.5;"><br></div>
+
+                <div style="line-height: 1.5;"><strong><span style="font-size: 19px;"><span data-custom-class="heading_1"><h2>Payment Failure Policy</h2></span></span></strong></div>
+                <ul>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">In case a payment transaction fails but the amount is deducted from the customer’s bank account, the refund process will be governed by the policies of the respective bank and payment gateway provider.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">Failed transaction amounts are generally refunded automatically to the original payment method within 5–7 business days, depending on the bank or payment provider.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">If the refund is not received within the expected timeframe, customers are advised to contact their bank or payment service provider.</span></li>
+                </ul>
+                <div style="line-height: 1.5;"><br></div>
+
+                <div style="line-height: 1.5;"><strong><span style="font-size: 19px;"><span data-custom-class="heading_1"><h2>Cancellation Policy</h2></span></span></strong></div>
+                <ul>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">Customers may choose not to continue after the free trial period without any cancellation charges.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">If a purchased plan expires and is not renewed or repurchased, access to the Business Portal will remain suspended until a new plan is purchased.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">Purchased plans cannot be cancelled once activated.</span></li>
+                </ul>
+                <div style="line-height: 1.5;"><br></div>
+
+                <div style="line-height: 1.5;"><strong><span style="font-size: 19px;"><span data-custom-class="heading_1"><h2>Refund Policy</h2></span></span></strong></div>
+                <ul>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">Since users are provided with a free trial period to evaluate the platform before purchasing, all payments made for purchased plans are generally non-refundable.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">No refunds will be provided once a plan has been successfully purchased and activated.</span></li>
+                    <li data-custom-class="body_text" style="line-height: 1.5;"><span style="font-size: 15px; color: rgb(89, 89, 89);">Refund requests, if any, will be reviewed only under exceptional circumstances and solely at the discretion of management.</span></li>
+                </ul>
+                <div style="line-height: 1.5;"><br></div>
+
+                <div style="line-height: 1.5;"><strong><span style="font-size: 19px;"><span data-custom-class="heading_1"><h2>Contact Us</h2></span></span></strong></div>
+                <div style="line-height: 1.5;"><span style="color: rgb(89, 89, 89); font-size: 15px;"><span data-custom-class="body_text">For any questions regarding cancellations, or support, please contact us through our official website or email us at <a target="_blank" data-custom-class="link" href="mailto:info@cwsinventory.in">info@cwsinventory.in</a>.</span></span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#0E0A4E] text-white pt-[60px] pb-[40px]">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-[60px]">
+        <div class="flex flex-col md:flex-row flex-wrap justify-between items-start gap-12 lg:gap-8 mb-[60px] lg:mb-[80px]">
+            
+            <!-- Column 1: Company Info -->
+            <div class="w-full md:w-[45%] lg:w-[330px]">
+                <div class="mb-8">
+                    <img src="{% static 'accounts/images/screenshot_temp.png' %}" alt="Creative Web Solution" class="h-[40px] lg:h-[46px] object-contain" style="filter: brightness(0) invert(1);" />
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-[12px]">
+                        <i class="fa-solid fa-location-dot text-[#5046E5] text-[16px] mt-1 shrink-0"></i>
+                        <a href="https://www.google.com/maps?q=LWT+203+C/O+ITI+RD+above+PNG+near+Parihar+Chowk+Aundh+Maharashtra+411007" target="_blank" class="font-sans text-[14px] leading-relaxed text-[#FFFFFF] hover:text-[#5046E5] transition">
+                            LWT, 203, C/O, ITI RD, above PNG,<br>
+                            near Parihar Chowk, Aundh,<br>
+                            Maharashtra 411007
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-[12px]">
+                        <i class="fa-solid fa-phone text-[#5046E5] text-[16px] shrink-0"></i>
+                        <span class="font-sans text-[14px] leading-relaxed text-[#FFFFFF]"><a href="tel:+919326246981">+91 93262 46981</a></span>
+                    </li>
+                    <li class="flex items-center gap-[12px]">
+                        <i class="fa-solid fa-envelope text-[#5046E5] text-[16px] shrink-0"></i>
+                        <span class="font-sans text-[14px] leading-relaxed text-[#FFFFFF] break-all">
+                            <a href="mailto:info@cwsinventory.in" target="_blank" class="hover:text-blue-400">info@cwsinventory.in</a>
+                        </span>
+                    </li>
+                    <li class="flex items-center gap-[12px]">
+                        <i class="fa-solid fa-globe text-[#5046E5] text-[16px] shrink-0"></i>
+                        <span class="font-sans text-[14px] leading-relaxed text-[#FFFFFF] break-all">
+                            <a href="https://www.creativewebsolution.in" target="_blank">www.creativewebsolution.in</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Links -->
+            <div class="w-full md:w-[45%] lg:w-[188px]">
+                <h4 class="font-semibold text-[16px] leading-[32px] tracking-[1px] text-[#FFFFFF] mb-1">Links</h4>
+                <div class="w-[40px] h-[4px] bg-[#5046E5] rounded-full mb-6"></div>
+                <ul class="space-y-[12px]">
+                    <li>
+                         <a href="{% url 'contact_us' %}" class="flex items-center group">
+                            <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                            <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Contact Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'privacy_policy' %}" class="flex items-center group">
+                            <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                            <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Privacy Policy</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'terms_of_use' %}" class="flex items-center group">
+                            <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                            <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Terms of Use</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'refund_policy' %}" class="flex items-center group">
+                            <i class="fa-solid fa-chevron-right text-[#5046E5] text-[12px] mr-3"></i>
+                            <span class="font-sans text-[14px] leading-relaxed group-hover:text-[#5046E5] transition-colors">Refund & Cancellation Policy</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Social Media -->
+            <div class="w-full md:w-[45%] lg:w-[200px]">
+                <h4 class="font-semibold text-[16px] leading-[32px] tracking-[1px] text-[#FFFFFF] mb-1">Social Media</h4>
+                <div class="w-[40px] h-[4px] bg-[#5046E5] rounded-full mb-6"></div>
+                <div class="flex items-center gap-[8px]">
+                    <a href="https://www.instagram.com/creativewebsolution99?igsh=OWlxcGlvNG1tNG1s"  target="_blank" class="w-[42px] h-[42px] bg-gradient-to-tr from-[#F58529] via-[#D62976] to-[#8134AF] rounded-[6px] flex items-center justify-center transition-transform hover:scale-110 overflow-hidden">
+                        <img src="{% static 'accounts/images/instagram_icon.png' %}" alt="Instagram" class="w-[32px] h-[32px] object-contain">
+                    </a> 
+                     <a href="https://www.linkedin.com/company/108927136/admin/dashboard/"
+               target="_blank" class="w-[42px] h-[42px] bg-[#0077B5] rounded-[6px] flex items-center justify-center transition-transform hover:scale-110 overflow-hidden">
+                        <img src="{% static 'accounts/images/linkedin_icon.png' %}" alt="LinkedIn" class="w-[32px] h-[32px] object-contain">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 4: Illustration -->
+            <div class="w-full md:w-[45%] lg:w-[300px] flex justify-center md:justify-start lg:justify-end mt-4 lg:mt-0">
+                <img src="{% static 'accounts/images/last.png' %}" alt="Illustration" class="w-[200px] sm:w-[250px] lg:w-full h-auto object-contain opacity-90" />
+            </div>
+
+        </div>
+
+        <div class="pt-8 border-t border-white/10">
+            <p class="font-sans font-normal text-[14px] lg:text-[16px] leading-relaxed text-[#999999] text-center md:text-left">
+                Copyright © 2026 CWS Inventory. ALL RIGHTS RESERVED
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Navbar shadow effect on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
