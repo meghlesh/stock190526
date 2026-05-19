@@ -356,7 +356,7 @@ def admin_logout(request):
     logout(request)
     return redirect("admin_login")
 
-# --- Marketing / Landing Page Flows ---
+# --- Marketing / index Page Flows ---
 
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
@@ -367,7 +367,7 @@ from django.contrib.staticfiles import finders #9-5-26
 
 def start_free_trial(request):
     # Smart Redirect Layer
-    return redirect('/signup/?plan=starter&source=landing&utm_campaign=free_trial')
+    return redirect('/signup/?plan=starter&source=index&utm_campaign=free_trial')
 
 def signup_view(request):
     if request.method == "POST":
@@ -698,9 +698,9 @@ def start_plan(request, plan_name):
     VALID_PLANS = ['starter', 'business']
 
     if plan_name.lower() not in VALID_PLANS:
-        return redirect('landing_page')
+        return redirect('index_page')
     
-    return redirect(f'/paid-signup/?plan={plan_name.upper()}&source=landing&utm_campaign=paid_plan')
+    return redirect(f'/paid-signup/?plan={plan_name.upper()}&source=index&utm_campaign=paid_plan')
 
 
 def paid_signup_view(request):

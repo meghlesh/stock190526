@@ -17,7 +17,7 @@ urlpatterns = [
 
     path('notifications/', views.notifications, name='notifications'),
 
-    # Marketing / Landing Page Flows
+    # Marketing / index Page Flows
     path('start-free-trial/', views.start_free_trial, name='start_free_trial'),
     path('signup/', views.signup_view, name='signup'),
     path('verify-email/<str:token>/', views.verify_email, name='verify_email'),
